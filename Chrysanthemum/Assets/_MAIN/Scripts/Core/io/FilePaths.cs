@@ -2,5 +2,5 @@ using UnityEngine;
 
 public class FilePaths
 {
-    public static readonly string root = $"{Application.dataPath}/Assets/";
+    public static readonly string root = $"{Application.dataPath}/gameData/";
 }

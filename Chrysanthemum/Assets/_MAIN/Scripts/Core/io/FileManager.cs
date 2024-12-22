@@ -5,15 +5,15 @@ using UnityEngine;
 
 public class FileManager
 {
-    public static List<string> ReadTextFile(string filepath, bool includeBlankLines = true)
+    public static List<string> ReadTextFile(string filePath, bool includeBlankLines = true)
     {
-        if (filepath.StartsWith('/'))
-            filepath = FilePaths.root + filepath;
+        if (filePath.StartsWith('/'))
+            filePath = FilePaths.root + filePath;
 
         List<string> lines = new List<string>();
         try
         {
-            using (StreamReader sr = new StreamReader(filepath))
+            using (StreamReader sr = new StreamReader(filePath))
             {
                 while (!sr.EndOfStream)
                 {
@@ -31,7 +31,7 @@ public class FileManager
         return lines;
     }
 
-    public static List<string> ReadTextAsset(string filepath, bool includeBlankLines = true)
+    public static List<string> ReadTextAsset(string filePath, bool includeBlankLines = true)
     {
         return null;
     }
