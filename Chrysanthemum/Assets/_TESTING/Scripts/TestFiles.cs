@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class TestFiles : MonoBehaviour
 {
-    private string fileName = "testFile.txt";
+    [SerializeField] private TextAsset fileName;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -13,7 +14,7 @@ public class TestFiles : MonoBehaviour
 
     IEnumerator Run()
     {
-        List<string> lines = FileManager.ReadTextFile(fileName, true);
+        List<string> lines = FileManager.ReadTextAsset(fileName, false);
 
         foreach (string line in lines)
             Debug.Log(line);

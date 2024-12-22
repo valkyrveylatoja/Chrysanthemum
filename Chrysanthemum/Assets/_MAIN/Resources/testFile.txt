@@ -1,0 +1,7 @@
+Val "hi." list(items -f long), playSong("Intro Song" -v 1)
+
+setScene("Classroom" -s 5.5)
+
+Ali "Hello, \"Quote Here\" my baby."
+
+narrator "And so ended the 'baron' conversation." PlaySong(End, -p 0.5), list(players), saveGame(1 -g all -f simple)

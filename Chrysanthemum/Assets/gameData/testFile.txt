@@ -1,5 +1,0 @@
-Val: "Hi Baron!"
-
-Ali: "Hi my baby."
-
-Baron: "Oh Okay."
