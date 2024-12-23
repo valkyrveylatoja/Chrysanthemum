@@ -1,7 +1,14 @@
-Val "hi." list(items -f long), playSong("Intro Song" -v 1)
+Rainer "This is line 1"
+"This is line 2 from Rainer" list(items -f long), playSong("Intro Song" -v 1)
+"This is line 3 from Rainer"
 
 setScene("Classroom" -s 5.5)
 
-Ali "Hello, \"Quote Here\" my baby."
+narrator "Narrator is speaking now" PlaySong(End, -p 0.5), list(players), saveGame(1 -g all -f simple)
+"Narrator is continuing to speak"
 
-narrator "And so ended the 'baron' conversation." PlaySong(End, -p 0.5), list(players), saveGame(1 -g all -f simple)
+Ali "Ali 1"
+"Ali 2"
+
+Val "Val 1"
+"Val 2"

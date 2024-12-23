@@ -1,0 +1,19 @@
+Val: "Well this sucks,{wa 1} it seems that we have to go with plan B!"
+
+Ali: "What's...{wa 0.5} plan B?"
+
+Rainer: "Val...{wa 2} Don't tell me..."
+
+Val: "Yes Rainer...{a} We have no other choice."
+
+Rainer: "Can't you reconsider? {wc 1.5} Think about the people!"
+
+Ali: "Hey.{c} What's going on?"
+
+Val: "Rainer as much as I care about our people,{wa 0.5} this will be the only way to never lose more lives."
+
+Ali: "Val.{wa 3} What in the flying Baron fuck are you talking about?"
+
+Val: "Do you remember...{wc 1} Kris and the mom...{wc 1} Ali?"
+
+Ali: "Oh okay."
