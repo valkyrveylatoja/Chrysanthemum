@@ -1,14 +1,2 @@
-Rainer "This is line 1"
-"This is line 2 from Rainer" list(items -f long), playSong("Intro Song" -v 1)
-"This is line 3 from Rainer"
 
-setScene("Classroom" -s 5.5)
-
-narrator "Narrator is speaking now" PlaySong(End, -p 0.5), list(players), saveGame(1 -g all -f simple)
-"Narrator is continuing to speak"
-
-Ali "Ali 1"
-"Ali 2"
-
-Val "Val 1"
-"Val 2"
+speaker "Dialogue Goes Here" Command(args), Command(args)
