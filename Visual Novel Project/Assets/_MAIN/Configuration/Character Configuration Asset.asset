@@ -1,0 +1,36 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 385386cee751a6040bcddbdf1f318107, type: 3}
+  m_Name: Character Configuration Asset
+  m_EditorClassIdentifier: 
+  characters:
+  - name: Ali
+    alias: a
+    characterType: 1
+    nameColor: {r: 1, g: 1, b: 1, a: 0}
+    dialogueColor: {r: 1, g: 1, b: 1, a: 0}
+    nameFont: {fileID: 11400000, guid: 33ff9e2864883d2418568a6d1d41ff2d, type: 2}
+    dialogueFont: {fileID: 11400000, guid: 33ff9e2864883d2418568a6d1d41ff2d, type: 2}
+  - name: Rainer
+    alias: r
+    characterType: 0
+    nameColor: {r: 0.39811313, g: 0.6034886, b: 1, a: 0}
+    dialogueColor: {r: 0.56015915, g: 0.47358483, b: 1, a: 0}
+    nameFont: {fileID: 11400000, guid: 33ff9e2864883d2418568a6d1d41ff2d, type: 2}
+    dialogueFont: {fileID: 11400000, guid: 33ff9e2864883d2418568a6d1d41ff2d, type: 2}
+  - name: Gerard
+    alias: ger
+    characterType: 0
+    nameColor: {r: 0.7834829, g: 1, b: 0.64716977, a: 0}
+    dialogueColor: {r: 0.51886785, g: 1, b: 0.983935, a: 0}
+    nameFont: {fileID: 11400000, guid: 33ff9e2864883d2418568a6d1d41ff2d, type: 2}
+    dialogueFont: {fileID: 11400000, guid: 33ff9e2864883d2418568a6d1d41ff2d, type: 2}
