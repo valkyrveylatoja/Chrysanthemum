@@ -1,0 +1,2 @@
+CreateCharacter(Rainer as Ali)
+Rainer as Ali "I am speaking with my name showing up as Rainer""
