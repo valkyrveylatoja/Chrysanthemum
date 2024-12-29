@@ -8,6 +8,8 @@ namespace CHARACTERS
 {
     public abstract class Character
     {
+        public const bool ENABLE_ON_START = true;
+
         public string name = "";
         public string displayName = "";
         public RectTransform root = null;
@@ -34,6 +36,7 @@ namespace CHARACTERS
             if (prefab != null)
             {
                 GameObject ob = Object.Instantiate(prefab, manager.characterPanel);
+                ob.name = manager.FormatCharacterPath(manager.characterPrefabNameFormat, name);
                 ob.SetActive(true);
                 root = ob.GetComponent<RectTransform>();
                 animator = root.GetComponentInChildren<Animator>();

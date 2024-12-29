@@ -26,31 +26,23 @@ namespace TESTING
 
         IEnumerator Test()
         {
-            Character rainer1 = CreateCharacter("Rainer1 as Rainer");
-            Character rainer2 = CreateCharacter("Ali");
-            Character rainer3 = CreateCharacter("Gerard");
+            Character_Sprite Rainer = CreateCharacter("Rainer") as Character_Sprite;
+            Character_Sprite Ali = CreateCharacter("Ali") as Character_Sprite;
+            //Character_Sprite Baron = CreateCharacter("Baron") as Character_Sprite;
 
-            rainer1.SetPosition(Vector2.zero);
-            rainer2.SetPosition(new Vector2(0.5f, 0.5f));
-            rainer3.SetPosition(Vector2.one);
+            yield return new WaitForSeconds(1);
 
-            rainer2.Show();
-            rainer3.Show();
+            Sprite Ali1 = Ali.GetSprite("Happy");
+            Ali.TransitionSprite(Ali1);
+            Ali.MoveToPosition(Vector2.zero);
+            yield return Rainer.Show();
 
-            yield return rainer1.Show();
+            yield return new WaitForSeconds(1);
 
-            yield return rainer1.MoveToPosition(Vector2.one, smooth: true);
-            yield return rainer1.MoveToPosition(Vector2.zero, smooth: true);
+            Ali.TransitionSprite(Ali.GetSprite("Mogging"));
 
-            rainer1.SetDialogueFont(tempFont);
-            rainer1.SetNameFont(tempFont);
-            rainer2.SetDialogueColor(Color.cyan);
-            rainer3.SetNameColor(Color.green);
-            rainer3.SetDialogueColor(Color.red);
 
-            yield return rainer1.Say("Yo. I'm Rainer.");
-            yield return rainer2.Say("...and I'm Ali.");
-            yield return rainer3.Say("..and I'm Gerard.");
+
 
             yield return null;
         }
