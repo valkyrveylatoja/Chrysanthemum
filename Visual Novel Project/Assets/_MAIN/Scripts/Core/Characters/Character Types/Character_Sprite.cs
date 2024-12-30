@@ -17,7 +17,11 @@ namespace CHARACTERS
 
         private string artAssetsDirectory = "";
 
-        public override bool isVisible => isRevealing || rootCG.alpha == 1;
+        public override bool isVisible
+        {
+            get { return isRevealing || rootCG.alpha == 1; }
+            set { rootCG.alpha = value ? 1 : 0; }
+        }
 
         public Character_Sprite(string name, CharacterConfigData config, GameObject prefab, string rootAssetsFolder) : base(name, config, prefab)
         {
@@ -40,7 +44,7 @@ namespace CHARACTERS
             {
                 Transform child = rendererRoot.transform.GetChild(i);
 
-                Image rendererImage = child.GetComponent<Image>();
+                Image rendererImage = child.GetComponentInChildren<Image>();
 
                 if (rendererImage != null)
                 {

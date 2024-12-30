@@ -25,7 +25,7 @@ namespace CHARACTERS
         public bool isRevealing => co_revealing != null;
         public bool isHiding => co_hiding != null;
         public bool isMoving => co_moving != null;
-        public virtual bool isVisible => false;
+        public virtual bool isVisible { get; set; }
 
         public Character(string name, CharacterConfigData config, GameObject prefab)
         {

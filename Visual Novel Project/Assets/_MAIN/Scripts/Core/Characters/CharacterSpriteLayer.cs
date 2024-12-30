@@ -105,7 +105,7 @@ namespace CHARACTERS
                 yield return null;
             }
 
-            co_transitioningLayer = null;
+            co_levelingAlpha = null;
         }
     }
 }

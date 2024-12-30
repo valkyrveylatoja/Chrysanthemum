@@ -3674,6 +3674,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1079984989}
     m_Modifications:
+    - target: {fileID: 4214660650664983313, guid: d46bdeabea7b968459caf46874e5aafc, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -28.657043
+      objectReference: {fileID: 0}
     - target: {fileID: 7853439974076586932, guid: d46bdeabea7b968459caf46874e5aafc, type: 3}
       propertyPath: m_Name
       value: Character - [Ali]
