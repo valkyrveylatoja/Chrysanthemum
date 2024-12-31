@@ -838,7 +838,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &410767196
 Transform:
   m_ObjectHideFlags: 0
@@ -2569,7 +2569,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 152, y: -255.50002}
+  m_AnchoredPosition: {x: 152, y: -255.5}
   m_SizeDelta: {x: -384, y: -375}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1514010066
@@ -3785,7 +3785,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1010224845048038213, guid: 105d8cdcd21ed0a408aa77c75181743b, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1280189789607379469, guid: 105d8cdcd21ed0a408aa77c75181743b, type: 3}
       propertyPath: m_Pivot.x
@@ -3867,6 +3867,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2053422197585821026, guid: 105d8cdcd21ed0a408aa77c75181743b, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 16.15503
+      objectReference: {fileID: 0}
+    - target: {fileID: 2053422197585821026, guid: 105d8cdcd21ed0a408aa77c75181743b, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 8.502289
+      objectReference: {fileID: 0}
     - target: {fileID: 3765514028428498796, guid: 105d8cdcd21ed0a408aa77c75181743b, type: 3}
       propertyPath: m_IsActive
       value: 1
@@ -3875,6 +3883,10 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: -498613307, guid: d8e22da8adbb3a84191e324e66f48c6e, type: 3}
+    - target: {fileID: 5692748365158585526, guid: 105d8cdcd21ed0a408aa77c75181743b, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 7c92d62773140f04f9512ca0df186ed3, type: 2}
     - target: {fileID: 7881312476383631352, guid: 105d8cdcd21ed0a408aa77c75181743b, type: 3}
       propertyPath: m_Sprite
       value: 
