@@ -26,36 +26,34 @@ namespace TESTING
 
         IEnumerator Test()
         {
-            //Character_Sprite Rainer = CreateCharacter("Rainer") as Character_Sprite;
-            Character_Sprite Ali = CreateCharacter("Ali") as Character_Sprite;
+            Character_Sprite Rainer = CreateCharacter("Rainer") as Character_Sprite;
+            Character_Sprite EvilRainer = CreateCharacter("EvilRainer as Rainer") as Character_Sprite;
             Character_Sprite Baron = CreateCharacter("Baron") as Character_Sprite;
+            Character_Sprite Ali = CreateCharacter("Ali") as Character_Sprite;
 
-            Baron.SetPosition(Vector2.zero);
-            Ali.SetPosition(new Vector2(1, 0));
+            EvilRainer.SetColor(Color.red);
+
+            Baron.SetPosition(new Vector2(0.3f, 0));
+            Ali.SetPosition(new Vector2(0.45f, 0));
+            Rainer.SetPosition(new Vector2(0.6f, 0));
+            EvilRainer.SetPosition(new Vector2(0.75f, 0));
+
+            EvilRainer.SetPriority(1000);
+            Ali.SetPriority(15);
+            Baron.SetPriority(8);
+            Rainer.SetPriority(30);
 
             yield return new WaitForSeconds(1);
 
-            yield return Baron.Flip(0.3f);
+            CharacterManager.instance.SortCharacters(new string[] { "Ali", "Baron" });
 
-            yield return Ali.FaceRight(immediate: true);
+            yield return new WaitForSeconds(1);
 
-            yield return Baron.FaceLeft(immediate: true);
+            CharacterManager.instance.SortCharacters();
 
-            Ali.Unhighlight();
-            yield return Baron.Say("Ali I... {wa 1} I want to say something.");
+            yield return new WaitForSeconds(1);
 
-            Baron.Unhighlight();
-            Ali.Highlight();
-            yield return Ali.Say("I want to say something too, Baron. {wa 0.5} Can I go first?");
-
-            Baron.Highlight();
-            Ali.Unhighlight();
-            yield return Baron.Say("I... {wa 0.5} Of course!");
-
-            Ali.Highlight();
-            Baron.Unhighlight();
-            Ali.TransitionSprite(Ali.GetSprite("Happy"));
-            yield return Ali.Say("Yay!");
+            CharacterManager.instance.SortCharacters(new string[] { "Baron", "EvilRainer", "Rainer", "Ali" });
 
             yield return null;
         }

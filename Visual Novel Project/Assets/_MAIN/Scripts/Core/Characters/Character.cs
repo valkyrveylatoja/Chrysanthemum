@@ -27,6 +27,7 @@ namespace CHARACTERS
         protected Color unhighlightedColor => new Color(color.r * UNHIGHLIGHTED_DARKEN_STRENGTH, color.g * UNHIGHLIGHTED_DARKEN_STRENGTH, color.b * UNHIGHLIGHTED_DARKEN_STRENGTH, color.a);
         public bool highlighted { get; protected set; } = true;
         protected bool facingLeft = DEFAULT_ORIENTATION_IS_FACING_LEFT;
+        public int priority {  get; protected set; }
 
         protected CharacterManager charactermanager => CharacterManager.instance;
         public DialogueSystem dialogueSystem => DialogueSystem.instance;
@@ -266,6 +267,14 @@ namespace CHARACTERS
         {
             Debug.Log("Cannot flip a character of this type!");
             yield return null;
+        }
+
+        public void SetPriority(int priority, bool autoSortCharactersOnUI = true)
+        {
+            this.priority = priority;
+
+            if (autoSortCharactersOnUI)
+                charactermanager.SortCharacters();
         }
         public enum CharacterType
         {
