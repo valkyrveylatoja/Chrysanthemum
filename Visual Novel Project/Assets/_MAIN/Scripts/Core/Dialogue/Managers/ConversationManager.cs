@@ -1,3 +1,4 @@
+using CHARACTERS;
 using COMMANDS;
 using System.Collections;
 using System.Collections.Generic;
@@ -70,10 +71,37 @@ namespace DIALOGUE
         {
             // Show or hide the speaker name if there is one present
             if (line.hasSpeaker)
-                dialogueSystem.ShowSpeakerName(line.speakerData.displayname);
+                HandleSpeakerLogic(line.speakerData);
 
             // Build dialogue
             yield return BuildLineSegments(line.dialogueata);
+        }
+
+        private void HandleSpeakerLogic(DL_SPEAKER_DATA speakerData)
+        {
+            bool characterMustBeCreated = (speakerData.makeCharacterEnter || speakerData.isCastingPosition || speakerData.isCasingExpressions);
+
+            Character character = CharacterManager.instance.GetCharacter(speakerData.name, createIfDoesNotExist: characterMustBeCreated);
+
+            if (speakerData.makeCharacterEnter && (!character.isVisible && !character.isRevealing))
+                character.Show();
+
+            // Add character name to the UI
+            dialogueSystem.ShowSpeakerName(speakerData.displayname);
+
+            // Now customize the dialogue for this character - if applicable
+            DialogueSystem.instance.ApplySpeakerDataToDialogueContainer(speakerData.name);
+
+            // Cast position
+            if (speakerData.isCasingExpressions)
+                character.MoveToPosition(speakerData.castPosition);
+
+            // Cast expression
+            if (speakerData.isCasingExpressions)
+            {
+                foreach (var ce in speakerData.CastExpressions)
+                    character.OnReceiveCastingExpression(ce.layer, ce.expression);
+            }
         }
 
         IEnumerator Line_RunCommands(DIALOGUE_LINE line)

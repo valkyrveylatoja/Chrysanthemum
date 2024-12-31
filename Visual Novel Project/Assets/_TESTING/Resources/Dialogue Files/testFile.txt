@@ -1,2 +1,9 @@
+Show(Ali, Rainer, Gerard)
 
-speaker "Dialogue Goes Here" Command(args), Command(args)
+Ali.Show()
+
+enter Rainer [Happy] "I am feeling happy today."
+
+enter Baron as ??? at 1 [0:4,1:A1_Happy] "How is everyone doing today?"
+
+Ali "Fine. {wa.05} Could be better."
