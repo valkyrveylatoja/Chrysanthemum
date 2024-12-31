@@ -30,43 +30,33 @@ namespace TESTING
             Character_Sprite Ali = CreateCharacter("Ali") as Character_Sprite;
             Character_Sprite Baron = CreateCharacter("Baron") as Character_Sprite;
 
-            Ali.isVisible = false;
-            Baron.Say("Hi I'm Baron.");
+            Baron.SetPosition(Vector2.zero);
+            Ali.SetPosition(new Vector2(1, 0));
 
-            yield return new WaitForSeconds(2);
+            yield return new WaitForSeconds(1);
 
-            Baron.Say("What's your name?");
+            yield return Baron.Flip(0.3f);
 
-            yield return new WaitForSeconds(2);
+            yield return Ali.FaceRight(immediate: true);
 
-            Baron.MoveToPosition(Vector2.zero);
-            yield return Ali.Show();
-            Ali.MoveToPosition(new Vector2(1, 0));
+            yield return Baron.FaceLeft(immediate: true);
 
-            Ali.Say("I dont know... I've lost my memory...");
+            Ali.Unhighlight();
+            yield return Baron.Say("Ali I... {wa 1} I want to say something.");
 
-            yield return new WaitForSeconds(2);
+            Baron.Unhighlight();
+            Ali.Highlight();
+            yield return Ali.Say("I want to say something too, Baron. {wa 0.5} Can I go first?");
 
-            Ali.Say("But... I remembered...");
+            Baron.Highlight();
+            Ali.Unhighlight();
+            yield return Baron.Say("I... {wa 0.5} Of course!");
 
-            yield return new WaitForSeconds(2);
+            Ali.Highlight();
+            Baron.Unhighlight();
+            Ali.TransitionSprite(Ali.GetSprite("Happy"));
+            yield return Ali.Say("Yay!");
 
-            Ali.TransitionSprite(Ali.GetSprite("Mogging"));
-            Ali.Say("I remembered how beautiful you are.");
-
-            yield return new WaitForSeconds(2);
-
-            Sprite body = Baron.GetSprite("B2");
-            Sprite face = Baron.GetSprite("B_Blush");
-            Baron.TransitionSprite(body);
-            yield return Baron.TransitionSprite(face, 1);
-
-            Baron.Say("H-hey... Quite a fliratious one aren't you?");
-
-            yield return new WaitForSeconds(2);
-
-            Baron.Say("A-anyway. Please stop joking around. Tell me your full name please, Sir.");
-            Baron.TransitionSprite(Baron.GetSprite("B_Angry"), layer:1);
             yield return null;
         }
 
