@@ -1,6 +1,14 @@
-Show(Ali, Rainer, Gerard)
+wait(1), CreateCharacter(Ali 1 -e true), CreateCharacter(Baron), CreateCharacter("Rainer" -e true -i true)
 
-Ali.Show()
+MoveCharacter(Ali 1 -2.5 0.75)
+
+wait(1000)
+
+Move(Baron 0 1.2 false)
+
+Show(Ali Rainer Baron -immediate false)
+
+Narrator "Showing characters."
 
 enter Rainer [Happy] "I am feeling happy today."
 
