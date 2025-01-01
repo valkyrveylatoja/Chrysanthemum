@@ -82,13 +82,17 @@ namespace COMMANDS
             if (immediate)
                 character.SetPosition(position);
             else
+            {
+                CommandManager.instance.AddTerminationActionToCurrentProcess(() => { character?.SetPosition(position); });
                 yield return character.MoveToPosition(position, speed, smooth);
+            }
         }
 
         public static IEnumerator ShowAll(string[] data)
         {
             List<Character> characters = new List<Character>();
             bool immediate = false;
+            float speed = 1f;
 
             foreach (string s in data)
             {
@@ -104,18 +108,25 @@ namespace COMMANDS
             var parameters = ConvertDataToParameters(data);
 
             parameters.TryGetValue(PARAM_IMMEDIATE, out immediate, defaultValue: false);
+            parameters.TryGetValue(PARAM_SPEED, out speed, defaultValue: 1f);
 
             // Call the logic on all the characters
-            foreach(Character character in characters)
+            foreach (Character character in characters)
             {
                 if (immediate)
                     character.isVisible = true;
                 else
-                    character.Show();
+                    character.Show(speed);
             }
 
             if (!immediate)
             {
+                CommandManager.instance.AddTerminationActionToCurrentProcess(() =>
+                {
+                    foreach (Character character in characters)
+                        character.isVisible = true;
+                });
+
                 while (characters.Any(c => c.isRevealing))
                     yield return null;
             }
@@ -125,6 +136,7 @@ namespace COMMANDS
         {
             List<Character> characters = new List<Character>();
             bool immediate = false;
+            float speed = 1f;
 
             foreach (string s in data)
             {
@@ -140,6 +152,7 @@ namespace COMMANDS
             var parameters = ConvertDataToParameters(data);
 
             parameters.TryGetValue(PARAM_IMMEDIATE, out immediate, defaultValue: false);
+            parameters.TryGetValue(PARAM_SPEED, out speed, defaultValue: 1f);
 
             // Call the logic on all the characters
             foreach (Character character in characters)
@@ -147,11 +160,17 @@ namespace COMMANDS
                 if (immediate)
                     character.isVisible = false;
                 else
-                    character.Hide();
+                    character.Hide(speed);
             }
 
             if (!immediate)
             {
+                CommandManager.instance.AddTerminationActionToCurrentProcess(() =>
+                {
+                    foreach (Character character in characters)
+                        character.isVisible = false;
+                });
+
                 while (characters.Any(c => c.isHiding))
                     yield return null;
             }

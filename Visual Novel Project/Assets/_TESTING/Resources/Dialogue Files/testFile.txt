@@ -1,17 +1,27 @@
-wait(1), CreateCharacter(Ali 1 -e true), CreateCharacter(Baron), CreateCharacter("Rainer" -e true -i true)
+wait(5), CreateCharacter(Baron 1 -e true), CreateCharacter(Gerard -e true -i true), CreateCharacter(Rainer)
 
-MoveCharacter(Ali 1 -2.5 0.75)
+[wait]MoveCharacter(Gerard 1 0 0.1)
 
-wait(1000)
+Gerard as ??? "Hi"
 
-Move(Baron 0 1.2 false)
+Gerard as Gerard "The name is Gerard. What is your name?"
 
-Show(Ali Rainer Baron -immediate false)
+Hide(Baron -spd 0.1)
 
-Narrator "Showing characters."
+Baron "Goodbye."
 
-enter Rainer [Happy] "I am feeling happy today."
+Narrator "Then Baron leaves the scene."
 
-enter Baron as ??? at 1 [0:4,1:A1_Happy] "How is everyone doing today?"
+Gerard "Wow."
 
-Ali "Fine. {wa.05} Could be better."
+Hide(Gerard -spd 0.1)
+
+Show(Baron -spd 0.1)
+
+Baron "Is he gone? {wa 0.5} Good."
+
+Hide(Baron -spd 0.05)
+
+[wait]Show(Rainer -spd 0.1)
+
+Rainer "Im in this episode too!"

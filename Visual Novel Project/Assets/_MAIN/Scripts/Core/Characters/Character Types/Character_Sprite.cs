@@ -97,7 +97,7 @@ namespace CHARACTERS
 
             return spriteLayer.TransitionSprite(sprite, speed);
         }
-        public override IEnumerator ShowingOrHiding(bool show)
+        public override IEnumerator ShowingOrHiding(bool show, float speedMultiplier = 1f)
         {
             float targetAlpha = show ? 1f : 0;
             CanvasGroup self = rootCG;
