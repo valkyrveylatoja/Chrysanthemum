@@ -199,7 +199,7 @@ namespace CHARACTERS
             yield return null;
         }
 
-        public Coroutine Highlight(float speed = 1f)
+        public Coroutine Highlight(float speed = 1f, bool immediate = false)
         {
             if (isHighlighting)
                 return co_highlighting;
@@ -208,12 +208,12 @@ namespace CHARACTERS
                 charactermanager.StopCoroutine(co_highlighting);
 
             highlighted = true;
-            co_highlighting = charactermanager.StartCoroutine(Highlighting(highlighted, speed));
+            co_highlighting = charactermanager.StartCoroutine(Highlighting(speed, immediate));
 
             return co_highlighting;
         }
 
-        public Coroutine Unhighlight(float speed = 1f)
+        public Coroutine Unhighlight(float speed = 1f, bool immediate = false)
         {
             if (isUnhighlighting)
                 return co_highlighting;
@@ -222,12 +222,12 @@ namespace CHARACTERS
                 charactermanager.StopCoroutine(co_highlighting);
 
             highlighted = false;
-            co_highlighting = charactermanager.StartCoroutine(Highlighting(highlighted, speed));
+            co_highlighting = charactermanager.StartCoroutine(Highlighting(speed, immediate));
 
             return co_highlighting;
         }
 
-        public virtual IEnumerator Highlighting(bool highlight, float speedMultiplier)
+        public virtual IEnumerator Highlighting(float speedMultiplier, bool immediate = false)
         {
             Debug.Log("Highlighting is not available on this character type!");
             yield return null;

@@ -1,27 +1,5 @@
-wait(5), CreateCharacter(Baron 1 -e true), CreateCharacter(Gerard -e true -i true), CreateCharacter(Rainer)
+CreateCharacter(Baron 1 -e true -i true)
 
-[wait]MoveCharacter(Gerard 1 0 0.1)
+wait(1)
 
-Gerard as ??? "Hi"
-
-Gerard as Gerard "The name is Gerard. What is your name?"
-
-Hide(Baron -spd 0.01)
-
-Baron "Goodbye."
-
-Narrator "Then Baron leaves the scene."
-
-Gerard "Wow."
-
-Hide(Gerard -spd 0.1)
-
-Show(Baron -spd 0.1)
-
-Baron "Is he gone? {wa 0.5} Good."
-
-Hide(Baron -spd 0.05)
-
-[wait]Show(Rainer -spd 0.1)
-
-Rainer "Im in this episode too!"
+Baron.SetSprite(A2 -l 0 -spd 0.75), Baron.SetSprite(A_Shocked -l 1 -spd 0.75)
