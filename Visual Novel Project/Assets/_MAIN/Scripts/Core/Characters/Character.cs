@@ -88,7 +88,7 @@ namespace CHARACTERS
             if (isHiding)
                 charactermanager.StopCoroutine(co_hiding);
 
-            co_revealing = charactermanager.StartCoroutine(ShowingOrHiding(true));
+            co_revealing = charactermanager.StartCoroutine(ShowingOrHiding(true, speedMultiplier));
 
             return co_revealing;
         }
@@ -101,7 +101,7 @@ namespace CHARACTERS
             if (isRevealing)
                 charactermanager.StopCoroutine(co_revealing);
 
-            co_hiding = charactermanager.StartCoroutine(ShowingOrHiding(false));
+            co_hiding = charactermanager.StartCoroutine(ShowingOrHiding(false, speedMultiplier));
 
             return co_hiding;
         }

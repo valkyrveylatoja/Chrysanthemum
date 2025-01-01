@@ -6,7 +6,7 @@ Gerard as ??? "Hi"
 
 Gerard as Gerard "The name is Gerard. What is your name?"
 
-Hide(Baron -spd 0.1)
+Hide(Baron -spd 0.01)
 
 Baron "Goodbye."
 
