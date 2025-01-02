@@ -12,10 +12,4 @@ wait(1)
 
 [wait]Unhighlight(Baron Ali)
 
-CreateCharacter(Rainer)
-
-Rainer.Show(-i true)
-
-Rainer "Hi!"
-
 wait(1)

@@ -17,6 +17,8 @@ public class GraphicLayerTesting : MonoBehaviour
         yield return new WaitForSeconds(1);
 
         Texture blendTex = Resources.Load<Texture>("Graphics/Transition Effects/feathers");
-        layer.SetTexture("Graphics/BG Images/2", blendingTexture: blendTex);
+        //layer.SetTexture("Graphics/BG Images/2", blendingTexture: blendTex);
+
+        layer.SetVideo("Graphics/BG Videos/Fantasy Landscape", transitionSpeed: 0.1f, useAudio: true, blendingTexture: blendTex);
     }
 }
