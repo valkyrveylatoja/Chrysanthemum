@@ -36,16 +36,17 @@ namespace COMMANDS
             baseCommands.AddCommand("show", new Func<string[], IEnumerator>(Show));
             baseCommands.AddCommand("hide", new Func<string[], IEnumerator>(Hide));
             baseCommands.AddCommand("setpriority", new Action<string[]>(SetPriority));
+            baseCommands.AddCommand("setposition", new Action<string[]>(SetPosition));
             baseCommands.AddCommand("setColor", new Func<string[], IEnumerator>(SetColor));
-            baseCommands.AddCommand("hightlight", new Func<string[], IEnumerator>(Highlight));
-            baseCommands.AddCommand("unhightlight", new Func<string[], IEnumerator>(Unhighlight));
+            baseCommands.AddCommand("highlight", new Func<string[], IEnumerator>(Highlight));
+            baseCommands.AddCommand("unhighlight", new Func<string[], IEnumerator>(Unhighlight));
 
             // Add character specific databases
             CommandDatabase spriteCommands = CommandManager.instance.CreateSubDataBase(CommandManager.DATABASE_CHARACTERS_SPRITE);
             spriteCommands.AddCommand("setsprite", new Func<string[], IEnumerator>(SetSprite));
         }
 
-        public static void CreateCharacter(string[] data)
+        private static void CreateCharacter(string[] data)
         {
             string characterName = data[0];
             bool enable = false;
@@ -113,7 +114,7 @@ namespace COMMANDS
             }
         }
 
-        public static IEnumerator ShowAll(string[] data)
+        private static IEnumerator ShowAll(string[] data)
         {
             List<Character> characters = new List<Character>();
             bool immediate = false;
@@ -157,7 +158,7 @@ namespace COMMANDS
             }
         }
 
-        public static IEnumerator HideAll(string[] data)
+        private static IEnumerator HideAll(string[] data)
         {
             List<Character> characters = new List<Character>();
             bool immediate = false;

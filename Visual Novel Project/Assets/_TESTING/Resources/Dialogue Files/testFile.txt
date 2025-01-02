@@ -1,5 +1,21 @@
-CreateCharacter(Baron 1 -e true -i true)
+CreateCharacter(Baron 1 -e true -i true), CreateCharacter(Ali 1 -e true -i true)
+
+Ali.SetPosition(1), Baron.SetPosition(0)
 
 wait(1)
 
 Baron.SetSprite(A2 -l 0 -spd 0.75), Baron.SetSprite(A_Shocked -l 1 -spd 0.75)
+
+Ali.SetSprite(Happy -i false -spd 0.5)
+
+wait(1)
+
+[wait]Unhighlight(Baron Ali)
+
+CreateCharacter(Rainer)
+
+Rainer.Show(-i true)
+
+Rainer "Hi!"
+
+wait(1)

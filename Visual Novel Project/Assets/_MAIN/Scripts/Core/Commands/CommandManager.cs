@@ -127,7 +127,7 @@ namespace COMMANDS
             if (command != null)
                 return StartProcess(commandName, command, args);
 
-            Debug.LogError($"Command Manager was unable to execute command '{commandName}' on character '{args[0]}. The character name or command may be invalid.");
+            Debug.LogError($"Command Manager was unable to execute command '{commandName}' on character '{args[0]}'. The character name or command may be invalid.");
             return null;
         }
 

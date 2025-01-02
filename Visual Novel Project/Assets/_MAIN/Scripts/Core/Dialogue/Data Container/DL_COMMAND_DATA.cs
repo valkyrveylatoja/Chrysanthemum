@@ -26,7 +26,7 @@ namespace DIALOGUE
             commands = RipCommands(rawCommands);
         }
 
-        public List<Command> RipCommands(string rawCommands)
+        private List<Command> RipCommands(string rawCommands)
         {
             string[] data = rawCommands.Split(COMMANDSPLITTER_ID, System.StringSplitOptions.RemoveEmptyEntries);
             List<Command> result = new List<Command>();
