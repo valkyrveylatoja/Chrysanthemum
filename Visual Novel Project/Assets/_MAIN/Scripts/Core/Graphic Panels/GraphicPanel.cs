@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 [System.Serializable]
@@ -41,15 +42,21 @@ public class GraphicPanel
         layer.panel = panel.transform;
         layer.layerDepth = layerDepth;
 
-        int index = layers.FindIndex(l => l.layerDepth == layerDepth);
+        int index = layers.FindIndex(l => l.layerDepth > layerDepth);
         if (index == -1)
             layers.Add(layer);
         else
             layers.Insert(index, layer);
 
-        for(int i = 0; i < layers.Count; ++i)
+        for(int i = 0; i < layers.Count; i++)
             layers[i].panel.SetSiblingIndex(layers[i].layerDepth);
 
         return layer;
+    }
+
+    public void Clear()
+    {
+        foreach(var layer in layers)
+            layer.Clear();
     }
 }
