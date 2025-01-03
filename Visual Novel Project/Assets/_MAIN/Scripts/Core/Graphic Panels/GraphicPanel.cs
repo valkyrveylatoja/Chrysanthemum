@@ -10,7 +10,7 @@ public class GraphicPanel
     public GameObject rootPanel;
     private List<GraphicLayer> layers = new List<GraphicLayer>();
 
-    public GraphicLayer GetLayer(int layerDepth, bool creatIfDoesNotExist = false)
+    public GraphicLayer GetLayer(int layerDepth, bool createIfDoesNotExist = false)
     {
         for (int i = 0; i < layers.Count; i++)
         {
@@ -18,7 +18,7 @@ public class GraphicPanel
                 return layers[i];
         }
 
-        if (creatIfDoesNotExist)
+        if (createIfDoesNotExist)
         {
             return CreateLayer(layerDepth);
         }
@@ -48,7 +48,7 @@ public class GraphicPanel
         else
             layers.Insert(index, layer);
 
-        for(int i = 0; i < layers.Count; i++)
+        for (int i = 0; i < layers.Count; i++)
             layers[i].panel.SetSiblingIndex(layers[i].layerDepth);
 
         return layer;

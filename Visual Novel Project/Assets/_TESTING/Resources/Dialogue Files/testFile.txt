@@ -1,15 +1,11 @@
-CreateCharacter(Baron 1 -e true -i true), CreateCharacter(Ali 1 -e true -i true)
-
-Ali.SetPosition(1), Baron.SetPosition(0)
-
 wait(1)
 
-Baron.SetSprite(A2 -l 0 -spd 0.75), Baron.SetSprite(A_Shocked -l 1 -spd 0.75)
+SetLayerMedia(background "Fantasy Landscape" -aud true -speed 0.7 -b feathers -i true)
 
-Ali.SetSprite(Happy -i false -spd 0.5)
+CreateCharacter(Baron -e true -i true)
 
-wait(1)
+Baron "Hey uh, what is this place?"
 
-[wait]Unhighlight(Baron Ali)
+SetLayerMedia(cinematic -m "~/Graphics/Gallery/1" -spd 0.7 -b feathers)
 
-wait(1)
+Baron "Now what do we have he- HOT TAMALES!"
