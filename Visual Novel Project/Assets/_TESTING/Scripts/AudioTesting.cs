@@ -19,15 +19,17 @@ namespace TESTING
         IEnumerator Running()
         {
             Character_Sprite Baron = CreateCharacter("Baron") as Character_Sprite;
+            Character Me = CreateCharacter("Me");
             Baron.Show();
 
             AudioManager.instance.PlaySoundEffect("Audio/SFX/RadioStatic", loop: true);
 
-            yield return Baron.Say("I'm going to turn off the radio.");
+            yield return Me.Say("Please turn off the radio.");
 
             AudioManager.instance.StopSoundEffect("RadioStatic");
+            AudioManager.instance.PlayVoice("Audio/Voices/Ali_ohok");
 
-            Baron.Say("It's off now!");
+            Baron.Say("Oh okay!");
         }
     }
 }
