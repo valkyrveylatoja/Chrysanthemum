@@ -157,7 +157,7 @@ namespace COMMANDS
                 if (c.runningProcess != null && !c.runningProcess.IsDone)
                     c.runningProcess.Stop();
 
-                c.onTerminateAction.Invoke();
+                c.onTerminateAction?.Invoke();
             }
 
             activeProcesses.Clear();

@@ -1,11 +1,19 @@
 wait(1)
 
-SetLayerMedia(background "Fantasy Landscape" -aud true -speed 0.7 -b feathers -i true)
+SetLayerMedia(background Nebula), SetLayerMedia(background 1 SpaceShipInterior)
 
 CreateCharacter(Baron -e true -i true)
 
 Baron "Hey uh, what is this place?"
 
-SetLayerMedia(cinematic -m "~/Graphics/Gallery/1" -spd 0.7 -b feathers)
+ClearLayerMedia(background -blend hypno)
 
-Baron "Now what do we have he- HOT TAMALES!"
+Baron "What th- AGH..! C-CAN'T BREATHE...!"
+
+SETlAYERmEDIA(CINEMATIC -m "~/Graphics/Gallery/1")
+
+Baron "O-oh... {wa 0.5} What's the point of fearing death if I can see you babes one last time."
+
+ClearLayerMedia(cinematic -blend hypno)
+
+Baron "W-wait.. {wa 0.5} Don't Go! {c} Awwww... *Dies*"

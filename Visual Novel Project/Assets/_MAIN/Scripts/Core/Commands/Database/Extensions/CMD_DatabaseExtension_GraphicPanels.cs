@@ -20,7 +20,8 @@ namespace COMMANDS
 
         new public static void Extend(CommandDatabase database)
         {
-            database.AddCommand("setlayermedia", new Func<string[], IEnumerator>(SetLayerMedia))
+            database.AddCommand("setlayermedia", new Func<string[], IEnumerator>(SetLayerMedia));
+            database.AddCommand("clearlayermedia", new Func<string[], IEnumerator>(ClearLayerMedia));
 ;        }
 
         private static IEnumerator SetLayerMedia(string[] data)
@@ -31,7 +32,7 @@ namespace COMMANDS
             string mediaName = "";
             float transitionSpeed = 0;
             bool immediate = false;
-            string blendTextName = "";
+            string blendTexName = "";
             bool useAudio = false;
 
             string pathToGraphic = "";
@@ -65,7 +66,7 @@ namespace COMMANDS
                 parameters.TryGetValue(PARAM_SPEED, out transitionSpeed, defaultValue: 1);
 
             // Try to get the blending texture for the media if we are using one.
-            parameters.TryGetValue(PARAM_BLENDTEX, out blendTextName);
+            parameters.TryGetValue(PARAM_BLENDTEX, out blendTexName);
 
             // If this is a video, try to get whether we use audio from the video or not
             parameters.TryGetValue(PARAM_USEVIDEOAUDIO, out useAudio, defaultValue: false);
@@ -86,8 +87,8 @@ namespace COMMANDS
                 yield break;
             }
 
-            if (!immediate && blendTextName != string.Empty)
-                blendTex = Resources.Load<Texture>(FilePaths.resources_blendTextures + blendTextName);
+            if (!immediate && blendTexName != string.Empty)
+                blendTex = Resources.Load<Texture>(FilePaths.resources_blendTextures + blendTexName);
 
              // Lets try to get the layer to apply the media to
              GraphicLayer graphicLayer = panel.GetLayer(layer, createIfDoesNotExist: true);
@@ -99,6 +100,61 @@ namespace COMMANDS
             else
             {
                 yield return graphicLayer.SetVideo(graphic as VideoClip, transitionSpeed, useAudio, blendTex, pathToGraphic, immediate);
+            }
+        }
+
+        private static IEnumerator ClearLayerMedia(string[] data)
+        {
+            // Parameters available to function
+            string panelName = "";
+            int layer = 0;
+            float transitionSpeed = 0;
+            bool immediate = false;
+            string blendTexName = "";
+
+            Texture blendTex = null;
+
+            // Now get the parameters
+            var parameters = ConvertDataToParameters(data);
+
+            // Try to get the panel that this media is applied to
+            parameters.TryGetValue(PARAM_PANEL, out panelName);
+            GraphicPanel panel = GraphicPanelManager.instance.GetPanel(panelName);
+
+            if (panel == null)
+            {
+                Debug.LogError($"Unable to grab panel '{panelName}' because it is not a valid panel. Please check the panel name and adjust the command.");
+                yield break;
+            }
+
+            // Try to get the layer to apply this graphic to
+            parameters.TryGetValue(PARAM_LAYER, out layer, defaultValue: -1);
+
+            // Try to get if this is an immediate effect or not
+            parameters.TryGetValue(PARAM_IMMEDIATE, out immediate, defaultValue: false);
+
+            // Try to get the speed the transition if it is not an immediate effect
+            if (!immediate)
+                parameters.TryGetValue(PARAM_SPEED, out transitionSpeed, defaultValue: 1);
+
+            // Try to get teh blending texture for the media if we are using one
+            parameters.TryGetValue(PARAM_BLENDTEX, out blendTexName);
+
+            if (!immediate && blendTexName != string.Empty)
+                blendTex = Resources.Load<Texture>(FilePaths.resources_blendTextures+ blendTexName);
+
+            if (layer == -1)
+                panel.Clear(transitionSpeed, blendTex, immediate);
+            else
+            {
+                GraphicLayer graphicLayer = panel.GetLayer(layer);
+                if (graphicLayer == null)
+                {
+                    Debug.LogError($"Could not clear layer [{layer}] on panel '{panel.panelName}'");
+                    yield break;
+                }
+
+                graphicLayer.Clear(transitionSpeed, blendTex, immediate);
             }
         }
 

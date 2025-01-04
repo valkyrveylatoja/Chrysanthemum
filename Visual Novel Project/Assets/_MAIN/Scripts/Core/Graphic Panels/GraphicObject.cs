@@ -177,7 +177,7 @@ public class GraphicObject
 
     }
 
-    private void Destroy()
+    public void Destroy()
     {
         if (layer.currentGraphic != null && layer.currentGraphic.renderer == renderer)
             layer.currentGraphic = null;
