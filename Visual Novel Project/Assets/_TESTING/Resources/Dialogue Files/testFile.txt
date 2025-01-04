@@ -1,19 +1,9 @@
-wait(1)
+playambience(RainyMood)
+playsong("Isn't She Lovely")
+playvoice(ALI_ohok)
+enter Ali "oh ok"
 
-SetLayerMedia(background Nebula), SetLayerMedia(background 1 SpaceShipInterior)
+StopSong()
+StopAmbience()
 
-CreateCharacter(Baron -e true -i true)
-
-Baron "Hey uh, what is this place?"
-
-ClearLayerMedia(background -blend hypno)
-
-Baron "What th- AGH..! C-CAN'T BREATHE...!"
-
-SETlAYERmEDIA(CINEMATIC -m "~/Graphics/Gallery/1")
-
-Baron "O-oh... {wa 0.5} What's the point of fearing death if I can see you babes one last time."
-
-ClearLayerMedia(cinematic -blend hypno)
-
-Baron "W-wait.. {wa 0.5} Don't Go! {c} Awwww... *Dies*"
+wait(100)

@@ -34,7 +34,6 @@ namespace DIALOGUE
             return process;
         }
 
-
         public void StopConversation()
         {
             if (!isRunning)

@@ -31,6 +31,8 @@ namespace TESTING
             Character_Sprite Baron = CreateCharacter("Baron") as Character_Sprite;
             Character_Sprite Ali = CreateCharacter("Ali") as Character_Sprite;
 
+            Baron.Show();
+            Ali.Show();
             Baron.SetPosition(new Vector2(0, 0));
             Ali.SetPosition(new Vector2(1, 0));
 

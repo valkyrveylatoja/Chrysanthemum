@@ -133,6 +133,20 @@ public class AudioManager : MonoBehaviour
         c.StopTrack();
     }
 
+    public void StopTrack(string trackname)
+    {
+        trackname = trackname.ToLower();
+
+        foreach (var channel in channels.Values)
+        {
+            if (channel.activeTrack != null && channel.activeTrack.name.ToLower() == trackname)
+            {
+                channel.StopTrack();
+                return;
+            }
+        }
+    }
+
     public AudioChannel TryGetChannel(int channelNumber, bool createIfDoesNotExist = false)
     {
         AudioChannel channel = null;

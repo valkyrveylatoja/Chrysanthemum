@@ -29,6 +29,7 @@ namespace TESTING
 
             AudioManager.instance.PlayTrack("Audio/Ambience/RainyMood", 0);
             AudioManager.instance.PlayTrack("Audio/Music/Calm", 1, pitch: 0.7f);
+            AudioManager.instance.PlaySoundEffect("Audio/SFX/thunder_strong_01");
 
             yield return Baron.Say("We can have multiple channels for playing ambience as well as music!");
 
