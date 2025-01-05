@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using CHARACTERS;
+using System.Runtime.CompilerServices;
 
 namespace DIALOGUE
 {
@@ -15,6 +16,7 @@ namespace DIALOGUE
         public DialogueContainer dialogueContainer = new DialogueContainer();
         private ConversationManager conversationManager;
         private TextArchitect architect;
+        [SerializeField] private CanvasGroup mainCanvas;
 
         public static DialogueSystem instance { get; private set; }
 
@@ -24,6 +26,7 @@ namespace DIALOGUE
         public bool isRunningConversation => conversationManager.isRunning;
 
         public DialogueContinuePrompt prompt;
+        private CanvasGroupController cgController;
 
         private void Awake()
         {
@@ -44,6 +47,9 @@ namespace DIALOGUE
 
             architect = new TextArchitect(dialogueContainer.dialogueText);
             conversationManager = new ConversationManager(architect); // To use architect referene from conversation manager with no other scripts referencing it
+
+            cgController = new CanvasGroupController(this, mainCanvas);
+            dialogueContainer.Initialize();
 
         }
 
@@ -93,5 +99,10 @@ namespace DIALOGUE
         {
             return conversationManager.StartConversation(conversation);
         }
+
+        public bool isVisible => cgController.isVisible;
+        public Coroutine Show(float speed = 1f, bool immediate = false) => cgController.Show(speed, immediate);
+
+        public Coroutine Hide(float speed = 1f, bool immediate = false) => cgController.Hide(speed, immediate);
     }
 }

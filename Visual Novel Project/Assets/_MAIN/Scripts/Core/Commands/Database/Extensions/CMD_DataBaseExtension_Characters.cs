@@ -486,6 +486,7 @@ namespace COMMANDS
                 yield return character.Unhighlight();
             }
         }
+
         #endregion
 
         #region SPRITE CHARACTER COMMANDS

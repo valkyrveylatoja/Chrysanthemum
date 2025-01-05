@@ -20,8 +20,8 @@ MonoBehaviour:
     dialogueColor: {r: 1, g: 1, b: 1, a: 1}
     nameFont: {fileID: 11400000, guid: 33ff9e2864883d2418568a6d1d41ff2d, type: 2}
     dialogueFont: {fileID: 11400000, guid: 33ff9e2864883d2418568a6d1d41ff2d, type: 2}
-    nameFontSize: 22
-    dialogueFontSize: 22
+    nameFontScale: 1
+    dialogueFontScale: 1
   - name: Rainer
     alias: r
     characterType: 1
@@ -29,8 +29,8 @@ MonoBehaviour:
     dialogueColor: {r: 0.56015915, g: 0.47358483, b: 1, a: 1}
     nameFont: {fileID: 11400000, guid: 33ff9e2864883d2418568a6d1d41ff2d, type: 2}
     dialogueFont: {fileID: 11400000, guid: 33ff9e2864883d2418568a6d1d41ff2d, type: 2}
-    nameFontSize: 22
-    dialogueFontSize: 25
+    nameFontScale: 1
+    dialogueFontScale: 1
   - name: Gerard
     alias: ger
     characterType: 1
@@ -38,8 +38,8 @@ MonoBehaviour:
     dialogueColor: {r: 0.51886785, g: 1, b: 0.983935, a: 1}
     nameFont: {fileID: 11400000, guid: 33ff9e2864883d2418568a6d1d41ff2d, type: 2}
     dialogueFont: {fileID: 11400000, guid: 33ff9e2864883d2418568a6d1d41ff2d, type: 2}
-    nameFontSize: 0
-    dialogueFontSize: 0
+    nameFontScale: 1
+    dialogueFontScale: 1
   - name: Baron
     alias: b
     characterType: 2
@@ -47,8 +47,8 @@ MonoBehaviour:
     dialogueColor: {r: 1, g: 1, b: 1, a: 1}
     nameFont: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
     dialogueFont: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-    nameFontSize: 22
-    dialogueFontSize: 22
+    nameFontScale: 1
+    dialogueFontScale: 1
   - name: Abod
     alias: ab
     characterType: 1
@@ -56,5 +56,5 @@ MonoBehaviour:
     dialogueColor: {r: 0.81245667, g: 0.48867923, b: 1, a: 1}
     nameFont: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
     dialogueFont: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-    nameFontSize: 22
-    dialogueFontSize: 22
+    nameFontScale: 1
+    dialogueFontScale: 1

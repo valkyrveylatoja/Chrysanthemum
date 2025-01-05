@@ -1,58 +1,19 @@
-wait(5)
+CreateCharacter(Baron -e true)
+setlayermedia(background "01_1")
+Baron.move(0 -i true)
 
-narrator "The cold makes me anxious."
+Baron "Hi"
 
-playambience("19" -v 0.7 -p 0.5)
-
-narrator as ??? "The low temperature touches every insecurity."
-
-"Looming to every integral organ."
-
-"A grimace has never looked more clearer."
-
-"Impending signs have never been more close."
-
-setlayermedia(background nebula -spd 0.01)
-
-"This is what it is like."
-
-"No ground to support me."
-
-"Deceiving my freedom."
-
-"Ever so slightly engulfing me to its trenches."
-
-"This is what it is like."
-
-"...This is what it is like."
-
-"No love."
-
-"No God."
-
-"No Sun."
-
-"No hand to reach."
-
-"No now."
-
-"...Ah"
-
-"So this is what it is like."
-
-"To feel cold."
-
+[wait]hidedb(-spd 0.1)
 clearlayermedia(background)
-stopambience()
-HideDB()
+Baron.hide()
 
-wait(2)
+wait(3)
 
-"................."
+setlayermedia(background "01_2")
+Baron.show()
+showui(-i true)
 
-"......."
+Baron "That was fun!"
 
-"..."
-
-"But is that all that it really is?"
-
+Baron "Wanna do it again in some other time?"
