@@ -15,3 +15,6 @@ MonoBehaviour:
   characterConfigurationAsset: {fileID: 11400000, guid: 6e5778a5e404b5c46ad5e6febb7acb56, type: 2}
   defaultTextColor: {r: 1, g: 1, b: 1, a: 1}
   defaultFont: {fileID: 11400000, guid: 33ff9e2864883d2418568a6d1d41ff2d, type: 2}
+  dialogueFontScale: 1
+  defaultNameFontSize: 22
+  defaultDialogueFontSize: 22

@@ -1,46 +1,7 @@
 wait(5)
 
-narrator "The cold makes me anxious."
+CreateCharacter(Rainer)
 
-playambience("19" -v 0.7 -p 0.5)
+Rainer.Show()
 
-narrator "The low temperature touches every insecurity."
-
-"Looming to every integral organ."
-
-"A grimace has never looked more clearer."
-
-"Impending signs have never been more close."
-
-[wait]setlayermedia(background nebula -spd 0.01)
-
-"This is what it is like."
-
-"No ground to support me."
-
-"Deceiving my freedom."
-
-"Ever so slightly engulfing me to its trenches."
-
-"This is what it is like."
-
-"...This is what it is like."
-
-"No love."
-
-"No God."
-
-"No Sun."
-
-"No hand to reach."
-
-"No now."
-
-"...Ah"
-
-"So this is what it is like."
-
-"To feel cold."
-
-clearlayermedia(background)
-stopambience()
+Rainer "Whats up"

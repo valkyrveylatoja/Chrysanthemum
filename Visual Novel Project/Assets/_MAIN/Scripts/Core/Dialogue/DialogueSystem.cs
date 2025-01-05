@@ -62,10 +62,17 @@ namespace DIALOGUE
 
         public void ApplySpeakerDataToDialogueContainer(CharacterConfigData config)
         {
+            // Set Dialogue details
             dialogueContainer.SetDialogueColor(config.dialogueColor);
             dialogueContainer.SetDialogueFont(config.dialogueFont);
+            float fontSize = this.config.defaultDialogueFontSize * this.config.dialogueFontScale * config.dialogueFontScale;
+            dialogueContainer.SetDialogueFontSize(fontSize);
+
+            // Set Name details
             dialogueContainer.nameContainer.SetNameColor(config.nameColor);
             dialogueContainer.nameContainer.SetNameFont(config.nameFont);
+            fontSize = this.config.defaultNameFontSize * config.nameFontScale;
+            dialogueContainer.nameContainer.SetNameFontSize(fontSize);
         }
         public void ShowSpeakerName(string speakerName = "")
         {
