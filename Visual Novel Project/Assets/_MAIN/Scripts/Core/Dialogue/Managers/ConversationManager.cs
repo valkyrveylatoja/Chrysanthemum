@@ -59,7 +59,8 @@ namespace DIALOGUE
                 // Run commands
                 if (line.hasCommands)
                     yield return Line_RunCommands(line);
-
+                
+                // Wait for user input if dialogue was in this line
                 if (line.hasDialogue)
                 {
                     // Wait for user input
@@ -186,8 +187,12 @@ namespace DIALOGUE
 
         IEnumerator WaitForUserInput()
         {
+            dialogueSystem.prompt.Show();
+
             while (!userPrompt)
                 yield return null;
+
+            dialogueSystem.prompt.Hide();
 
             userPrompt = false;
         }
