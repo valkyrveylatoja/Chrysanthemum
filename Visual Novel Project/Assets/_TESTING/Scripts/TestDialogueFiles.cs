@@ -33,4 +33,13 @@ public class TestDialogueFiles : MonoBehaviour
 
         DialogueSystem.instance.Say(lines);
     }
+
+    private void Update()
+    {
+        if (Input.GetKeyUp(KeyCode.DownArrow))
+            DialogueSystem.instance.dialogueContainer.Hide();
+
+        else if (Input.GetKeyUp(KeyCode.UpArrow))
+            DialogueSystem.instance.dialogueContainer.Show();
+    }
 }
