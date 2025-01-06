@@ -1,19 +1,7 @@
-CreateCharacter(Baron -e true)
-setlayermedia(background "01_1")
-Baron.move(0 -i true)
+narrator "and so begin the adventures of <mainChar>"
 
-Baron "Hi"
+<mainChar> "my name is <mainChar>.{c} what time is it?"
 
-[wait]hidedb(-spd 0.1)
-clearlayermedia(background)
-Baron.hide()
+narrator "the time is <time> and you are only level <playerLevel>"
 
-wait(3)
-
-setlayermedia(background "01_2")
-Baron.show()
-showui(-i true)
-
-Baron "That was fun!"
-
-Baron "Wanna do it again in some other time?"
+<mainChar> "oh... {wa 1} ok! <tempVal1>"

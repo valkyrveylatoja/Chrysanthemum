@@ -15,10 +15,15 @@ namespace DIALOGUE
 
         private TextArchitect architect = null;
         private bool userPrompt = false;
+
+        private TagManager tagManager;
+
         public ConversationManager(TextArchitect architect)
         {
             this.architect = architect;
             dialogueSystem.onUserPrompt_Next += OnUserPrompt_Next;
+
+            tagManager = new TagManager();
         }
 
         private void OnUserPrompt_Next()
@@ -95,7 +100,7 @@ namespace DIALOGUE
                 character.Show();
 
             // Add character name to the UI
-            dialogueSystem.ShowSpeakerName(speakerData.displayname);
+            dialogueSystem.ShowSpeakerName(tagManager.Inject(speakerData.displayname));
 
             // Now customize the dialogue for this character - if applicable
             DialogueSystem.instance.ApplySpeakerDataToDialogueContainer(speakerData.name);
@@ -146,7 +151,7 @@ namespace DIALOGUE
 
                 yield return WaitForDialogueSegmentSignalToBeTriggered(segment);
 
-                yield return BuildDIalogue(segment.dialogue, segment.appendText);
+                yield return BuildDialogue(segment.dialogue, segment.appendText);
             }
         }
 
@@ -167,13 +172,17 @@ namespace DIALOGUE
             }
         }
 
-        IEnumerator BuildDIalogue(string dialogue, bool append = false)
+        IEnumerator BuildDialogue(string dialogue, bool append = false)
         {
+            dialogue = tagManager.Inject(dialogue);
+
+            // Build the dialogue
             if (!append)
                 architect.Build(dialogue);
             else
                 architect.Append(dialogue);
 
+            // Wait for the dialogue to complete.
             while (architect.isBuilding)
             {
                 if (userPrompt)
