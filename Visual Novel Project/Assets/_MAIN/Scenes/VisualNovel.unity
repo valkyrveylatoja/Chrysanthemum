@@ -3389,6 +3389,7 @@ GameObject:
   - component: {fileID: 1833264503}
   - component: {fileID: 1833264502}
   - component: {fileID: 1833264504}
+  - component: {fileID: 1833264505}
   m_Layer: 0
   m_Name: Dialogue Testing
   m_TagString: Untagged
@@ -3442,12 +3443,25 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1833264499}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 922368bd6e47f4143a63e9fb8b66b05b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   fileToRead: {fileID: 4900000, guid: e14e51e668b297849a5a15b52653bd12, type: 3}
+--- !u!114 &1833264505
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1833264499}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0eb1545c02468c84db7f3c0455484e25, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tempFont: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
 --- !u!1 &1913487541
 GameObject:
   m_ObjectHideFlags: 0

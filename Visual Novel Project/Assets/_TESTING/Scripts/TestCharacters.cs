@@ -42,6 +42,8 @@ namespace TESTING
             Ali.Animate("Hop");
             yield return Ali.Say("Hey Baron.. {wa 1} Do you feel that chill?");
 
+            Baron.SetDialogueColor(Color.red);
+            Baron.SetNameColor(Color.cyan);
             Baron.FaceRight();
             Baron.TransitionSprite(Baron.GetSprite("A2"));
             Baron.TransitionSprite(Baron.GetSprite("A_Shocked"), layer: 1);
@@ -52,6 +54,7 @@ namespace TESTING
             Ali.TransitionSprite(Ali.GetSprite("Happy"));
             yield return Ali.Say("Oh, {wa 0.5} it's over!");
 
+            Baron.ResetConfigurationData();
             Baron.TransitionSprite(Baron.GetSprite("B2"));
             Baron.TransitionSprite(Baron.GetSprite("B_Blush2"), layer: 1);
             Baron.Animate("Shiver", false);

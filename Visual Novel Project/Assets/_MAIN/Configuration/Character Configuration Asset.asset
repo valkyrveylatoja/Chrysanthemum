@@ -13,6 +13,15 @@ MonoBehaviour:
   m_Name: Character Configuration Asset
   m_EditorClassIdentifier: 
   characters:
+  - name: <mainChar>
+    alias: mc
+    characterType: 0
+    nameColor: {r: 0.2999999, g: 0.31248683, b: 1, a: 1}
+    dialogueColor: {r: 0.7150943, g: 0.9700738, b: 1, a: 1}
+    nameFont: {fileID: 11400000, guid: 33ff9e2864883d2418568a6d1d41ff2d, type: 2}
+    dialogueFont: {fileID: 11400000, guid: 33ff9e2864883d2418568a6d1d41ff2d, type: 2}
+    nameFontScale: 2
+    dialogueFontScale: 1.2
   - name: Ali
     alias: a
     characterType: 1
