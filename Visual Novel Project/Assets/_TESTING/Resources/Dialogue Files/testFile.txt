@@ -4,4 +4,4 @@ narrator "and so begin the adventures of <mainChar>"
 
 narrator "the time is <time> and you are only level <playerLevel>"
 
-<mainChar> "oh... {wa 1} ok! <tempVal1>"
+<mainChar> "oh... {wa 1} <i>ok!</i> <tempVal1>"
