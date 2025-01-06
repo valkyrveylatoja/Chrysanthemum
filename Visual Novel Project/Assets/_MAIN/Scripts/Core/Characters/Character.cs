@@ -3,10 +3,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
-using System.Diagnostics.CodeAnalysis;
-using Unity.IO.LowLevel.Unsafe;
-using UnityEditor.Rendering.BuiltIn.ShaderGraph;
-using COMMANDS;
 
 namespace CHARACTERS
 {
@@ -30,7 +26,7 @@ namespace CHARACTERS
         protected bool facingLeft = DEFAULT_ORIENTATION_IS_FACING_LEFT;
         public int priority {  get; protected set; }
 
-        protected CharacterManager charactermanager => CharacterManager.instance;
+        protected CharacterManager characterManager => CharacterManager.instance;
         public DialogueSystem dialogueSystem => DialogueSystem.instance;
 
         // Couroutines
@@ -58,8 +54,8 @@ namespace CHARACTERS
 
             if (prefab != null)
             {
-                GameObject ob = Object.Instantiate(prefab, charactermanager.characterPanel);
-                ob.name = charactermanager.FormatCharacterPath(charactermanager.characterPrefabNameFormat, name);
+                GameObject ob = Object.Instantiate(prefab, characterManager.characterPanel);
+                ob.name = characterManager.FormatCharacterPath(characterManager.characterPrefabNameFormat, name);
                 ob.SetActive(true);
                 root = ob.GetComponent<RectTransform>();
                 animator = root.GetComponentInChildren<Animator>();
@@ -84,12 +80,12 @@ namespace CHARACTERS
         public virtual Coroutine Show(float speedMultiplier = 1f)
         {
             if (isRevealing)
-                return co_revealing;
+                characterManager.StopCoroutine(co_revealing);
 
             if (isHiding)
-                charactermanager.StopCoroutine(co_hiding);
+                characterManager.StopCoroutine(co_hiding);
 
-            co_revealing = charactermanager.StartCoroutine(ShowingOrHiding(true, speedMultiplier));
+            co_revealing = characterManager.StartCoroutine(ShowingOrHiding(true, speedMultiplier));
 
             return co_revealing;
         }
@@ -97,12 +93,12 @@ namespace CHARACTERS
         public virtual Coroutine Hide(float speedMultiplier = 1f)
         {
             if (isHiding)
-                return co_hiding;
+                characterManager.StopCoroutine(co_hiding);
 
             if (isRevealing)
-                charactermanager.StopCoroutine(co_revealing);
+                characterManager.StopCoroutine(co_revealing);
 
-            co_hiding = charactermanager.StartCoroutine(ShowingOrHiding(false, speedMultiplier));
+            co_hiding = characterManager.StartCoroutine(ShowingOrHiding(false, speedMultiplier));
 
             return co_hiding;
         }
@@ -130,9 +126,9 @@ namespace CHARACTERS
                 return null;
 
             if (isMoving)
-                charactermanager.StopCoroutine(co_moving);
+                characterManager.StopCoroutine(co_moving);
 
-            co_moving = charactermanager.StartCoroutine(MovingToPosition(position, speed, smooth));
+            co_moving = characterManager.StartCoroutine(MovingToPosition(position, speed, smooth));
 
             return co_moving;
         }
@@ -187,9 +183,9 @@ namespace CHARACTERS
             this.color = color;
 
             if (isChangingColor)
-                charactermanager.StopCoroutine(co_changingColor);
+                characterManager.StopCoroutine(co_changingColor);
 
-            co_changingColor = charactermanager.StartCoroutine(ChangingColor(displayColor, speed));
+            co_changingColor = characterManager.StartCoroutine(ChangingColor(displayColor, speed));
 
             return co_changingColor;
         }
@@ -202,28 +198,22 @@ namespace CHARACTERS
 
         public Coroutine Highlight(float speed = 1f, bool immediate = false)
         {
-            if (isHighlighting)
-                return co_highlighting;
-
-            if(isUnhighlighting)
-                charactermanager.StopCoroutine(co_highlighting);
+            if (isHighlighting || isUnhighlighting)
+                characterManager.StopCoroutine(co_highlighting);
 
             highlighted = true;
-            co_highlighting = charactermanager.StartCoroutine(Highlighting(speed, immediate));
+            co_highlighting = characterManager.StartCoroutine(Highlighting(speed, immediate));
 
             return co_highlighting;
         }
 
         public Coroutine Unhighlight(float speed = 1f, bool immediate = false)
         {
-            if (isUnhighlighting)
-                return co_highlighting;
-
-            if (isHighlighting)
-                charactermanager.StopCoroutine(co_highlighting);
+            if (isHighlighting || isUnhighlighting)
+                characterManager.StopCoroutine(co_highlighting);
 
             highlighted = false;
-            co_highlighting = charactermanager.StartCoroutine(Highlighting(speed, immediate));
+            co_highlighting = characterManager.StartCoroutine(Highlighting(speed, immediate));
 
             return co_highlighting;
         }
@@ -245,10 +235,10 @@ namespace CHARACTERS
         public Coroutine FaceLeft(float speed = 1, bool immediate = false)
         {
             if (isFlipping)
-                charactermanager.StopCoroutine(co_flipping);
+                characterManager.StopCoroutine(co_flipping);
 
             facingLeft = true;
-            co_flipping = charactermanager.StartCoroutine(FaceDirection(facingLeft, speed, immediate));
+            co_flipping = characterManager.StartCoroutine(FaceDirection(facingLeft, speed, immediate));
 
             return co_flipping;
         }
@@ -256,10 +246,10 @@ namespace CHARACTERS
         public Coroutine FaceRight(float speed = 1, bool immediate = false)
         {
             if (isFlipping)
-                charactermanager.StopCoroutine(co_flipping);
+                characterManager.StopCoroutine(co_flipping);
 
             facingLeft = false;
-            co_flipping = charactermanager.StartCoroutine(FaceDirection(facingLeft, speed, immediate));
+            co_flipping = characterManager.StartCoroutine(FaceDirection(facingLeft, speed, immediate));
 
             return co_flipping;
         }
@@ -275,7 +265,7 @@ namespace CHARACTERS
             this.priority = priority;
 
             if (autoSortCharactersOnUI)
-                charactermanager.SortCharacters();
+                characterManager.SortCharacters();
         }
         
         public void Animate(string animation)

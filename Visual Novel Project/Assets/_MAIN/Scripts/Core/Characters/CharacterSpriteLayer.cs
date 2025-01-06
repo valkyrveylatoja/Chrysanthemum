@@ -80,7 +80,7 @@ namespace CHARACTERS
         private Coroutine TryStartLevelingAlphas()
         {
             if (isLevelingAlpha)
-                return co_levelingAlpha;
+                characterManager.StopCoroutine(co_levelingAlpha);
 
             co_levelingAlpha = characterManager.StartCoroutine(RunAlphaLeveling());
 
@@ -158,9 +158,13 @@ namespace CHARACTERS
 
                 renderer.color = Color.Lerp(oldCOlor, color, colorPercent);
 
-                foreach(Image oldImage in oldImages)
+                for (int i = oldImages.Count - 1; i >= 0; i--)
                 {
-                    oldImage.color = renderer.color;
+                    Image image = oldImages[i];
+                    if (image != null)
+                        image.color = renderer.color;
+                    else 
+                        oldImages.RemoveAt(i);
                 }
 
                 yield return null;

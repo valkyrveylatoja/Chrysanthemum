@@ -1,7 +1,22 @@
 narrator "and so begin the adventures of <mainChar>"
 
-<mainChar> "my name is <mainChar>.{c} what time is it?"
+<mainChar> "my name is <mainChar>. what time is it?"
 
 narrator "the time is <time> and you are only level <playerLevel>"
 
-<mainChar> "oh... {wa 1} <i>ok!</i> <tempVal1>"
+<mainChar> "oh... <i>ok!</i>"
+
+setlayermedia(background 01_2)
+narrator "what do you see... <mainChar>?"
+
+<mainChar> "i do not know."
+
+narrator "oh ok"
+
+clearlayermedia(background)
+
+setlayermedia(background Nebula)
+
+narrator "now what do you see?"
+
+<mainChar> "i still do not know. space maybe?"

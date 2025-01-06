@@ -3597,7 +3597,7 @@ GameObject:
   - component: {fileID: 1833264504}
   - component: {fileID: 1833264505}
   m_Layer: 0
-  m_Name: Dialogue Testing
+  m_Name: Testing
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
