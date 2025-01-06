@@ -1,15 +1,15 @@
-narrator "and so begin the adventures of <mainChar>"
+narrator "and so begin the adventures"
 
-<mainChar> "my name is <mainChar>. what time is it?"
+??? "what time is it?"
 
 narrator "the time is <time> and you are only level <playerLevel>"
 
-<mainChar> "oh... <i>ok!</i>"
+??? "oh... <i>ok!</i>"
 
 setlayermedia(background 01_2)
-narrator "what do you see... <mainChar>?"
+narrator "what do you see...?"
 
-<mainChar> "i do not know."
+??? "i do not know."
 
 narrator "oh ok"
 
@@ -19,4 +19,14 @@ setlayermedia(background Nebula)
 
 narrator "now what do you see?"
 
-<mainChar> "i still do not know. space maybe?"
+??? "i still do not know. space maybe?"
+
+clearlayermedia(background)
+
+narrator "interesting..."
+
+narrator "so tell me. what is your name?"
+
+input "What is your name?."
+
+narrator "nice to meet you, <input>."

@@ -3,6 +3,7 @@ using COMMANDS;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using DIALOGUE.LogicalLines;
 
 namespace DIALOGUE
 {
@@ -17,6 +18,7 @@ namespace DIALOGUE
         private bool userPrompt = false;
 
         private TagManager tagManager;
+        private LogicalLineManager logicalLineManager;
 
         public ConversationManager(TextArchitect architect)
         {
@@ -24,6 +26,7 @@ namespace DIALOGUE
             dialogueSystem.onUserPrompt_Next += OnUserPrompt_Next;
 
             tagManager = new TagManager();
+            logicalLineManager = new LogicalLineManager();
         }
 
         private void OnUserPrompt_Next()
@@ -49,7 +52,7 @@ namespace DIALOGUE
         }
         IEnumerator RunningConversation(List<string> conversation)
         {
-            for(int i = 0; i < conversation.Count; i++)
+            for (int i = 0; i < conversation.Count; i++)
             {
                 // Dont show any blank lines or try to run any logic on them.
                 if (string.IsNullOrWhiteSpace(conversation[i]))
@@ -57,21 +60,28 @@ namespace DIALOGUE
 
                 DIALOGUE_LINE line = DialogueParser.Parse(conversation[i]);
 
-                // Show dialogue
-                if (line.hasDialogue)
-                    yield return Line_RunDialogue(line);
-
-                // Run commands
-                if (line.hasCommands)
-                    yield return Line_RunCommands(line);
-                
-                // Wait for user input if dialogue was in this line
-                if (line.hasDialogue)
+                if (logicalLineManager.TryGetLogic(line, out Coroutine logic))
                 {
-                    // Wait for user input
-                    yield return WaitForUserInput();
+                    yield return logic;
+                }
+                else
+                {
+                    // Show dialogue
+                    if (line.hasDialogue)
+                        yield return Line_RunDialogue(line);
 
-                    CommandManager.instance.StopAllProcesses();
+                    // Run commands
+                    if (line.hasCommands)
+                        yield return Line_RunCommands(line);
+
+                    // Wait for user input if dialogue was in this line
+                    if (line.hasDialogue)
+                    {
+                        // Wait for user input
+                        yield return WaitForUserInput();
+
+                        CommandManager.instance.StopAllProcesses();
+                    }
                 }
             }
         }
@@ -87,7 +97,7 @@ namespace DIALOGUE
                 dialogueSystem.dialogueContainer.Show();
 
             // Build dialogue
-            yield return BuildLineSegments(line.dialogueata);
+            yield return BuildLineSegments(line.dialogueData);
         }
 
         private void HandleSpeakerLogic(DL_SPEAKER_DATA speakerData)
