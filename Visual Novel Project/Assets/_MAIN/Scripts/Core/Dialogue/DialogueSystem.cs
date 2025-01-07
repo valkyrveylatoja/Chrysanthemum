@@ -11,7 +11,7 @@ namespace DIALOGUE
 
         // Serializing to give access to private in Unity inspector
         public DialogueContainer dialogueContainer = new DialogueContainer();
-        private ConversationManager conversationManager;
+        public ConversationManager conversationManager { get; private set; }
         private TextArchitect architect;
         private AutoReader autoReader;
         [SerializeField] private CanvasGroup mainCanvas;
@@ -103,7 +103,13 @@ namespace DIALOGUE
             return Say(conversation);
         }
 
-        public Coroutine Say(List<string> conversation)
+        public Coroutine Say(List<string> lines)
+        {
+            Conversation conversation = new Conversation(lines);
+            return conversationManager.StartConversation(conversation);
+        }
+
+        public Coroutine Say(Conversation conversation)
         {
             return conversationManager.StartConversation(conversation);
         }

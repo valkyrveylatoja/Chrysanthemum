@@ -36,9 +36,9 @@ narrator "how are you feeling?"
 choice "How are you feeling?"
 {
 	-Choice1
-	line
-	line
+		line
+		line
 	-Choice2
-	line
-	commands
+		line
+		commands
 }
