@@ -45,7 +45,7 @@ choice "How are you feeling?"
 		choice "Response:"
 		{
 			-Alright
-				narrator "that's good that you understood."
+				narrator "that's good that you understand."
 			-...
 				narrator "now now, don't need too think much of it."
 		}
