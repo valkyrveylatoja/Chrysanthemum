@@ -30,3 +30,15 @@ narrator "so tell me. what is your name?"
 input "What is your name?."
 
 narrator "nice to meet you, <input>."
+
+narrator "how are you feeling?"
+
+choice "How are you feeling?"
+{
+	-Choice1
+	line
+	line
+	-Choice2
+	line
+	commands
+}
