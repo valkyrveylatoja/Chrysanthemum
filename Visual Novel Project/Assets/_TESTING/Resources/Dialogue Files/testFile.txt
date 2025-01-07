@@ -35,10 +35,39 @@ narrator "how are you feeling?"
 
 choice "How are you feeling?"
 {
-	-Choice1
-		line
-		line
-	-Choice2
-		line
-		commands
+	-Sad
+		<input> "i feel kind of sad"
+		narrator "life is short so do not waste on it being sad.""
+	-Happy
+		<input> "i'm so elated! i could kiss someone!"
+		narrator "it is of course great to feel happy."
+		"not because everything is good, but because you see the good side of everything."
+		choice "Response:"
+		{
+			-Alright
+				narrator "that's good that you understood."
+			-...
+				narrator "now now, don't need too think much of it."
+		}
+	-Normal
+		<input> "i don't know, really. i'm okay i guess?"
+		narrator "indifference is the strongest force in the universe."
+		"it makes everything it touches meaningless."
+		"love and hate do not stand a chance against it."
 }
+
+narrator "anyways, it was nice knowing you, <input>."
+
+narrator "you will wake up in any second. but before that, i want to give you some advice."
+
+choice "Advice?"
+{
+	-What is it?
+		narrator "i'm glad you asked."
+	-...
+		narrator "quite a quiet one aren't you?"
+}
+
+narrator "my advice is..."
+
+"...to never open that door."

@@ -22,7 +22,7 @@ namespace DIALOGUE
         private LogicalLineManager logicalLineManager;
 
         public Conversation conversation => (conversationQueue.IsEmpty() ? null : conversationQueue.top);
-
+        public int conversationProgress => (conversationQueue.IsEmpty() ? -1 : conversationQueue.top.GetProgress());
         private ConversationQueue conversationQueue;
         public ConversationManager(TextArchitect architect)
         {
@@ -66,6 +66,12 @@ namespace DIALOGUE
             while(!conversationQueue.IsEmpty())
             {
                 Conversation currentConversation = conversation;
+
+                if (currentConversation.HasReachedEnd())
+                {
+                    conversationQueue.Dequeue();
+                    continue;
+                }
 
                 string rawLine = currentConversation.CurrentLine();
 
@@ -111,6 +117,9 @@ namespace DIALOGUE
         private void TryAdvanceConversation(Conversation conversation)
         {
             conversation.IncrementProgress();
+
+            if (conversation != conversationQueue.top)
+                return;
 
             if (conversation.HasReachedEnd())
                 conversationQueue.Dequeue();
