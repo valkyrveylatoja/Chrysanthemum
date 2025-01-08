@@ -18,6 +18,8 @@ public class FilePaths
     public static readonly string resources_music = $"{resources_audio}Music/";
     public static readonly string resources_ambience = $"{resources_audio}Ambience/";
 
+    public static readonly string resources_dialogueFiles = $"Dialogue Files/";
+
     /// <summary>
     /// Returns the path to the resource using the deault path or the root of the resources folder
     /// </summary>

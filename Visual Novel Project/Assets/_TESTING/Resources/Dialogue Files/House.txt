@@ -1,0 +1,7 @@
+
+showdb(-spd 1)
+setlayermedia(background -m 01_1)
+<input> "ugh... what dream was that."
+
+"is this my house?"
+

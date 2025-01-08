@@ -25,6 +25,15 @@ clearlayermedia(background)
 
 narrator "interesting..."
 
+playsong("Isn't She Lovely" -p 1.5)
+narrator "now... what do you hear?"
+
+??? "i do not know..."
+
+narrator "hmmm. alright."
+
+stopsong()
+
 narrator "so tell me. what is your name?"
 
 input "What is your name?."
@@ -58,16 +67,17 @@ choice "How are you feeling?"
 
 narrator "anyways, it was nice knowing you, <input>."
 
-narrator "you will wake up in any second. but before that, i want to give you some advice."
+narrator "so now, where do you want to go?"
 
-choice "Advice?"
+choice "Where Should I Go?"
 {
-	-What is it?
-		narrator "i'm glad you asked."
-	-...
-		narrator "quite a quiet one aren't you?"
+	-Home
+		narrator "very well then, happy travels."
+		Load(House -enqueue true)
+	-Far Away From Here
+		narrator "very well then, happy travels."
+		Load(Unknown -enqueue true)
 }
 
-narrator "my advice is..."
-
-"...to never open that door."
+hidedb(-spd 0.5)
+wait(1)
