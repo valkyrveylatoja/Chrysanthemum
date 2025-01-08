@@ -1,2 +1,3 @@
-CreateCharacter(Rainer as Ali)
-Rainer as Ali "I am speaking with my name showing up as Rainer""
+input "what is your name?"
+
+<mainChar> "nice to meet you <input>."
