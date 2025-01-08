@@ -29,18 +29,18 @@ public class ChoicePanel : MonoBehaviour
     {
         instance = this;
 
-        cg = new CanvasGroupController(this, canvasGroup);
-
-        cg.alpha = 0;
-        cg.SetInteractableState(false);
-    }
-    // Start is called before the first frame update
-    void Start()
-    {
         //cg = new CanvasGroupController(this, canvasGroup);
 
         //cg.alpha = 0;
         //cg.SetInteractableState(false);
+    }
+    // Start is called before the first frame update
+    void Start()
+    {
+        cg = new CanvasGroupController(this, canvasGroup);
+
+        cg.alpha = 0;
+        cg.SetInteractableState(false);
     }
 
     public void Show(string question, string[] choices)

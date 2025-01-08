@@ -54,9 +54,7 @@ choice "How are you feeling?"
 		choice "Response:"
 		{
 			-Alright
-				narrator "that's good that you understand."
 			-...
-				narrator "now now, don't need too think much of it."
 		}
 	-Normal
 		<input> "i don't know, really. i'm okay i guess?"
@@ -72,12 +70,12 @@ narrator "so now, where do you want to go?"
 choice "Where Should I Go?"
 {
 	-Home
-		narrator "very well then, happy travels."
 		Load(House -enqueue true)
 	-Far Away From Here
-		narrator "very well then, happy travels."
 		Load(Unknown -enqueue true)
 }
+
+narrator "very well then, happy travels."
 
 hidedb(-spd 0.5)
 wait(1)
