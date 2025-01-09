@@ -20,7 +20,7 @@ namespace DIALOGUE
 
         public bool isCastingName => castName != string.Empty;
         public bool isCastingPosition = false;
-        public bool isCasingExpressions => CastExpressions.Count > 0;
+        public bool isCastingExpressions => CastExpressions.Count > 0;
 
         public bool makeCharacterEnter = false;
 

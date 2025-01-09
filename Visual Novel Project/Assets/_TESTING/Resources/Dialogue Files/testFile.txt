@@ -1,14 +1,5 @@
-choice "Where do you go?"
-{
-	-The Forest
-		$choice = Forest
-	-The Cave
-		$choice = Cave
-}
+wait(1)
 
-if ($choice == Cave)
-{
-	narrator "To the cave we go!"
-}
+enter Ali as ??? at 0.5 [Happy] "Hi"
 
-narrator "What are we waiting for, let's go to the $choice!"
+narratOr "you were swooned by his piercing gaze."

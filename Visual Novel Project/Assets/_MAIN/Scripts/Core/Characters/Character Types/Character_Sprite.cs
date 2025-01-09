@@ -65,6 +65,13 @@ namespace CHARACTERS
         {
             if (config.characterType == CharacterType.SpriteSheet)
             {
+
+                if (config.sprites.Count > 0)
+                {
+                    if(config.sprites.TryGetValue(spriteName, out Sprite sprite))
+                        return sprite;
+                }
+
                 string[] data = spriteName.Split(SPRITESHEET_TEX_SPRITE_DELIMITTER);
                 Sprite[] spriteArray = new Sprite[0];
 

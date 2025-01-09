@@ -140,7 +140,7 @@ namespace DIALOGUE
 
         private void HandleSpeakerLogic(DL_SPEAKER_DATA speakerData)
         {
-            bool characterMustBeCreated = (speakerData.makeCharacterEnter || speakerData.isCastingPosition || speakerData.isCasingExpressions);
+            bool characterMustBeCreated = (speakerData.makeCharacterEnter || speakerData.isCastingPosition || speakerData.isCastingExpressions);
 
             Character character = CharacterManager.instance.GetCharacter(speakerData.name, createIfDoesNotExist: characterMustBeCreated);
 
@@ -154,11 +154,11 @@ namespace DIALOGUE
             DialogueSystem.instance.ApplySpeakerDataToDialogueContainer(speakerData.name);
 
             // Cast position
-            if (speakerData.isCasingExpressions)
+            if (speakerData.isCastingExpressions)
                 character.MoveToPosition(speakerData.castPosition);
 
             // Cast expression
-            if (speakerData.isCasingExpressions)
+            if (speakerData.isCastingExpressions)
             {
                 foreach (var ce in speakerData.CastExpressions)
                     character.OnReceiveCastingExpression(ce.layer, ce.expression);
