@@ -1,0 +1,9 @@
+input "What is your name?"
+
+$name = "The Amazing <input>"
+
+narrator "You are now $name!"
+
+$name += " From Outer Space "
+
+narrator "You are now $name"

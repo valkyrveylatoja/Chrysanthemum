@@ -1,3 +1,0 @@
-input "what is your name?"
-
-<mainChar> "nice to meet you <input>."
