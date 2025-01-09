@@ -1,5 +1,7 @@
 wait(1)
-
+playsong("Isn't She Lovely")
+playambience(19 -v 0.5)
+setlayermedia(background "Fantasy Landscape" -aud true)
 enter Ali as ??? at 0.5 [Happy] "Hi"
 
 narratOr "you were swooned by his piercing gaze."

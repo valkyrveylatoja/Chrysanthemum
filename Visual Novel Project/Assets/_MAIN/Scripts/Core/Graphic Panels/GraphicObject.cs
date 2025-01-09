@@ -19,7 +19,9 @@ public class GraphicObject
 
     private GraphicLayer layer;
 
-    public bool isVideo { get {  return video != null; } }
+    public bool isVideo => video != null;
+    public bool useAudio => (audio != null ? !audio.mute : false);
+
     public VideoPlayer video = null;
     public AudioSource audio = null;
 

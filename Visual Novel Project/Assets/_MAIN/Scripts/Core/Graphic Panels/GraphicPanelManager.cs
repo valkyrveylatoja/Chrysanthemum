@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class GraphicPanelManager : MonoBehaviour
 {
-    public static GraphicPanelManager instance {  get; private set; }
+    public static GraphicPanelManager instance { get; private set; }
 
     public const float DEFAULT_TRANSITION_SPEED = 3f; 
 
-    [SerializeField]private GraphicPanel[] allPanels;
+    [field:SerializeField] public GraphicPanel[] allPanels { get; private set; }
 
     private void Awake()
     {

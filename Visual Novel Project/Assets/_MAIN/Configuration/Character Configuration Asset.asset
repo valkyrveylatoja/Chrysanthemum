@@ -22,6 +22,8 @@ MonoBehaviour:
     dialogueFont: {fileID: 11400000, guid: 33ff9e2864883d2418568a6d1d41ff2d, type: 2}
     nameFontScale: 2
     dialogueFontScale: 1.2
+    sprites:
+      _serializedList: []
   - name: Ali
     alias: a
     characterType: 1
@@ -31,6 +33,10 @@ MonoBehaviour:
     dialogueFont: {fileID: 11400000, guid: 33ff9e2864883d2418568a6d1d41ff2d, type: 2}
     nameFontScale: 1
     dialogueFontScale: 1
+    sprites:
+      _serializedList:
+      - Key: happy
+        Value: {fileID: 21300000, guid: 06cca0a2b90cab940ae029b4825081e3, type: 3}
   - name: Rainer
     alias: r
     characterType: 1
@@ -40,6 +46,8 @@ MonoBehaviour:
     dialogueFont: {fileID: 11400000, guid: 33ff9e2864883d2418568a6d1d41ff2d, type: 2}
     nameFontScale: 1
     dialogueFontScale: 1
+    sprites:
+      _serializedList: []
   - name: Gerard
     alias: ger
     characterType: 1
@@ -49,15 +57,67 @@ MonoBehaviour:
     dialogueFont: {fileID: 11400000, guid: 33ff9e2864883d2418568a6d1d41ff2d, type: 2}
     nameFontScale: 1
     dialogueFontScale: 1
+    sprites:
+      _serializedList: []
   - name: Baron
     alias: b
     characterType: 2
     nameColor: {r: 1, g: 0.5415094, b: 0.72490567, a: 1}
     dialogueColor: {r: 1, g: 1, b: 1, a: 1}
-    nameFont: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-    dialogueFont: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-    nameFontScale: 1
-    dialogueFontScale: 1
+    nameFont: {fileID: 11400000, guid: a44a7030d3129294c80509288d17d5b1, type: 2}
+    dialogueFont: {fileID: 11400000, guid: a44a7030d3129294c80509288d17d5b1, type: 2}
+    nameFontScale: 1.5
+    dialogueFontScale: 1.5
+    sprites:
+      _serializedList:
+      - Key: A_Blush
+        Value: {fileID: -498613307, guid: d8e22da8adbb3a84191e324e66f48c6e, type: 3}
+      - Key: A2
+        Value: {fileID: 1942331872, guid: d8e22da8adbb3a84191e324e66f48c6e, type: 3}
+      - Key: A_Neutral
+        Value: {fileID: 1356524360, guid: d8e22da8adbb3a84191e324e66f48c6e, type: 3}
+      - Key: A1
+        Value: {fileID: -1850178638, guid: d8e22da8adbb3a84191e324e66f48c6e, type: 3}
+      - Key: A_Angry
+        Value: {fileID: -1373578270, guid: d8e22da8adbb3a84191e324e66f48c6e, type: 3}
+      - Key: A_Blush2
+        Value: {fileID: -1064466815, guid: d8e22da8adbb3a84191e324e66f48c6e, type: 3}
+      - Key: A_Happy
+        Value: {fileID: -1170239075, guid: d8e22da8adbb3a84191e324e66f48c6e, type: 3}
+      - Key: A_Pumped
+        Value: {fileID: 968150266, guid: d8e22da8adbb3a84191e324e66f48c6e, type: 3}
+      - Key: A_Sad
+        Value: {fileID: -1641724708, guid: d8e22da8adbb3a84191e324e66f48c6e, type: 3}
+      - Key: A_Scared
+        Value: {fileID: 661962871, guid: d8e22da8adbb3a84191e324e66f48c6e, type: 3}
+      - Key: A_Shocked
+        Value: {fileID: 208738785, guid: d8e22da8adbb3a84191e324e66f48c6e, type: 3}
+      - Key: A_Smile
+        Value: {fileID: -1487557889, guid: d8e22da8adbb3a84191e324e66f48c6e, type: 3}
+      - Key: B1
+        Value: {fileID: 210681497, guid: d8e22da8adbb3a84191e324e66f48c6e, type: 3}
+      - Key: B2
+        Value: {fileID: 1952369000, guid: d8e22da8adbb3a84191e324e66f48c6e, type: 3}
+      - Key: B_Angry
+        Value: {fileID: -2020816637, guid: d8e22da8adbb3a84191e324e66f48c6e, type: 3}
+      - Key: B_Blush
+        Value: {fileID: -1946548152, guid: d8e22da8adbb3a84191e324e66f48c6e, type: 3}
+      - Key: B_Blush2
+        Value: {fileID: 1995847027, guid: d8e22da8adbb3a84191e324e66f48c6e, type: 3}
+      - Key: B_Happy
+        Value: {fileID: -1077571815, guid: d8e22da8adbb3a84191e324e66f48c6e, type: 3}
+      - Key: B_Neutral
+        Value: {fileID: 690984833, guid: d8e22da8adbb3a84191e324e66f48c6e, type: 3}
+      - Key: B_Pumped
+        Value: {fileID: 1616235627, guid: d8e22da8adbb3a84191e324e66f48c6e, type: 3}
+      - Key: B_Sad
+        Value: {fileID: -33081314, guid: d8e22da8adbb3a84191e324e66f48c6e, type: 3}
+      - Key: B_Scared
+        Value: {fileID: -751965177, guid: d8e22da8adbb3a84191e324e66f48c6e, type: 3}
+      - Key: B_Shocked
+        Value: {fileID: -1602193799, guid: d8e22da8adbb3a84191e324e66f48c6e, type: 3}
+      - Key: B_Smile
+        Value: {fileID: 1006585828, guid: d8e22da8adbb3a84191e324e66f48c6e, type: 3}
   - name: Abod
     alias: ab
     characterType: 1
@@ -67,3 +127,5 @@ MonoBehaviour:
     dialogueFont: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
     nameFontScale: 1
     dialogueFontScale: 1
+    sprites:
+      _serializedList: []

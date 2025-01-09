@@ -1703,7 +1703,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1426427696651649491, guid: 9396b881e181c1f4e83b948efe0841f3, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -3.0599976
+      value: -3.0599823
       objectReference: {fileID: 0}
     - target: {fileID: 1426427696651649491, guid: 9396b881e181c1f4e83b948efe0841f3, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -2152,7 +2152,7 @@ MonoBehaviour:
     root: {fileID: 1599129545}
     nameContainer:
       root: {fileID: 1927715785}
-      nameText: {fileID: 67854620}
+      <nameText>k__BackingField: {fileID: 67854620}
     dialogueText: {fileID: 848170663}
   mainCanvas: {fileID: 2141828904}
   prompt: {fileID: 1159145589}
@@ -4545,12 +4545,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d0ce397cea21fc46a27f7c9a3c6c51e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  allPanels:
-  - panelName: Background
+  <allPanels>k__BackingField:
+  - panelName: 
+    rootPanel: {fileID: 0}
+  - panelName: background
     rootPanel: {fileID: 49756018}
-  - panelName: Cinematic
+  - panelName: cinematic
     rootPanel: {fileID: 1468664973}
-  - panelName: Foreground
+  - panelName: foreground
     rootPanel: {fileID: 2069311917}
 --- !u!1 &1599129545
 GameObject:
@@ -5097,6 +5099,7 @@ GameObject:
   - component: {fileID: 1833264507}
   - component: {fileID: 1833264508}
   - component: {fileID: 1833264509}
+  - component: {fileID: 1833264510}
   m_Layer: 0
   m_Name: Testing
   m_TagString: Untagged
@@ -5222,6 +5225,28 @@ MonoBehaviour:
   var_flt: 0
   var_bool: 0
   var_str: 
+--- !u!114 &1833264510
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1833264499}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 78cc80c05873a5f4796e7d7746bc41d8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  data:
+    currentDialogue: 
+    currentSpeaker: 
+    dialogueFont: 
+    dialogueColors: {r: 0, g: 0, b: 0, a: 0}
+    dialogueScale: 0
+    speakerFont: 
+    speakerNameColor: {r: 0, g: 0, b: 0, a: 0}
+    speakerScale: 0
+  audioData: []
 --- !u!1 &1913487541
 GameObject:
   m_ObjectHideFlags: 0
@@ -5959,7 +5984,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1426427696651649491, guid: 9396b881e181c1f4e83b948efe0841f3, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -3.0599976
+      value: -3.0599823
       objectReference: {fileID: 0}
     - target: {fileID: 1426427696651649491, guid: 9396b881e181c1f4e83b948efe0841f3, type: 3}
       propertyPath: m_AnchoredPosition.y

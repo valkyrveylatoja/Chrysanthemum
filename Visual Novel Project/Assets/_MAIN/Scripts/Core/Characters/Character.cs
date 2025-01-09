@@ -24,7 +24,8 @@ namespace CHARACTERS
         protected Color unhighlightedColor => new Color(color.r * UNHIGHLIGHTED_DARKEN_STRENGTH, color.g * UNHIGHLIGHTED_DARKEN_STRENGTH, color.b * UNHIGHLIGHTED_DARKEN_STRENGTH, color.a);
         public bool highlighted { get; protected set; } = true;
         protected bool facingLeft = DEFAULT_ORIENTATION_IS_FACING_LEFT;
-        public int priority {  get; protected set; }
+        public int priority { get; protected set; }
+        public Vector2 targetPosition { get; private set; }
 
         protected CharacterManager characterManager => CharacterManager.instance;
         public DialogueSystem dialogueSystem => DialogueSystem.instance;
@@ -118,6 +119,8 @@ namespace CHARACTERS
 
             root.anchorMin = minAnchorTarget;
             root.anchorMax = maxAnchorTarget;
+
+            targetPosition = position;
         }
 
         public virtual Coroutine MoveToPosition(Vector2 position, float speed = 2f, bool smooth = false)
@@ -129,6 +132,8 @@ namespace CHARACTERS
                 characterManager.StopCoroutine(co_moving);
 
             co_moving = characterManager.StartCoroutine(MovingToPosition(position, speed, smooth));
+
+            targetPosition = position;
 
             return co_moving;
         }
@@ -156,7 +161,7 @@ namespace CHARACTERS
                 yield return null;
             }
 
-            Debug.Log("Done Moving");
+            //Debug.Log("Done Moving");
             co_moving = null;
         }
 
