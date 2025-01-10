@@ -70,8 +70,10 @@ narrator "so now, where do you want to go?"
 choice "Where Should I Go?"
 {
 	-Home
+		narrator "your house you say?"
 		Load(House -enqueue true)
 	-Far Away From Here
+		narrator "hm? interesting..."
 		Load(Unknown -enqueue true)
 }
 
