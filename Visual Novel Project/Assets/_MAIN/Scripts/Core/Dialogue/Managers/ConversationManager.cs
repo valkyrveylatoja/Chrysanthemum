@@ -14,6 +14,7 @@ namespace DIALOGUE
 
         private Coroutine process = null;
         public bool isRunning => process != null;
+        public bool isOnLogicalLine { get; private set; } = false;
 
         public TextArchitect architect = null;
         private bool userPrompt = false;
@@ -89,6 +90,7 @@ namespace DIALOGUE
 
                 if (logicalLineManager.TryGetLogic(line, out Coroutine logic))
                 {
+                    isOnLogicalLine = true;
                     yield return logic;
                 }
                 else
@@ -114,6 +116,7 @@ namespace DIALOGUE
                 }
 
                 TryAdvanceConversation(currentConversation);
+                isOnLogicalLine = false;
             }
 
             process = null;
