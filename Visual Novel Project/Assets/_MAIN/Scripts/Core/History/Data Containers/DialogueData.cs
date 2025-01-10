@@ -1,8 +1,8 @@
-using DIALOGUE;
 using System.Collections;
 using System.Collections.Generic;
-using TMPro;
 using UnityEngine;
+using DIALOGUE;
+using TMPro;
 
 namespace HISTORY
 {
@@ -50,8 +50,15 @@ namespace HISTORY
             dialogueText.text = data.currentDialogue;
             dialogueText.color = data.dialogueColor;
             dialogueText.fontSize = data.dialogueScale;
+            dialogueText.maxVisibleCharacters = data.currentDialogue.Length;
+            dialogueText.ForceMeshUpdate();
 
             nameText.text = data.currentSpeaker;
+            if (nameText.text != string.Empty)
+                ds.dialogueContainer.nameContainer.Show();
+            else
+                ds.dialogueContainer.nameContainer.Hide();
+
             nameText.color = data.speakerNameColor;
             nameText.fontSize = data.speakerScale;
 
