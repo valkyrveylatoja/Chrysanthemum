@@ -7,18 +7,16 @@ namespace TESTING
 {
     public class HistoryTesting : MonoBehaviour
     {
-        public DialogueData data;
-        public List<AudioData> audioData;
-        public List<GraphicData> graphicData;
-        public List<CharacterData> characterData;
+        public HistoryState state = new HistoryState();
 
         // Update is called once per frame
         void Update()
         {
-            data = DialogueData.Capture();
-            audioData = AudioData.Capture();
-            graphicData = GraphicData.Capture();
-            characterData = CharacterData.Capture();
+            if (Input.GetKeyDown(KeyCode.H))
+                state = HistoryState.Capture();
+
+            if (Input.GetKeyDown(KeyCode.R))
+                state.Load();
         }
     }
 }

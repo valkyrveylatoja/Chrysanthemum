@@ -5,3 +5,9 @@ setlayermedia(background "Fantasy Landscape" -aud true)
 enter Ali as ??? at 0.5 [Happy] "Hi"
 
 narratOr "you were swooned by his piercing gaze."
+
+stopsong()
+stopambience()
+clearlayermedia(background)
+
+Ali "Oh hi baby."
