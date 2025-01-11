@@ -5,6 +5,8 @@ using UnityEngine;
 
 public class VNMenuManager : MonoBehaviour
 {
+    public static VNMenuManager instance;
+
     private MenuPage activePage = null;
     private bool isOpen = false;
 
@@ -13,6 +15,11 @@ public class VNMenuManager : MonoBehaviour
 
     private CanvasGroupController rootCG;
 
+    private void Awake()
+    {
+        instance = this;
+
+    }
     // Start is called before the first frame update
     void Start()
     {
@@ -27,12 +34,16 @@ public class VNMenuManager : MonoBehaviour
     public void OpenSavePage()
     {
         var page = GetPage(MenuPage.PageType.SaveAndLoad);
+        var slm = page.anim.GetComponentInParent<SaveAndLoadMenu>();
+        slm.menuFunction = SaveAndLoadMenu.MenuFunction.save;
         OpenPage(page);
     }
 
     public void OpenLoadPage()
     {
         var page = GetPage(MenuPage.PageType.SaveAndLoad);
+        var slm = page.anim.GetComponentInParent<SaveAndLoadMenu>();
+        slm.menuFunction = SaveAndLoadMenu.MenuFunction.load;
         OpenPage(page);
     }
 

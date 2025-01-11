@@ -9,14 +9,18 @@ public class MenuPage : MonoBehaviour
 
     private const string OPEN = "Open";
     private const string CLOSE = "Close";
-    [SerializeField] private Animator anim;
+    public Animator anim;
     public virtual void Open()
     {
         anim.SetTrigger(OPEN);
     }
 
-    public virtual void Close()
+    public virtual void Close(bool closeAllMenus = false)
     {
         anim.SetTrigger(CLOSE);
+
+        if (closeAllMenus)
+            VNMenuManager.instance.CloseRoot();
+
     }
 }
