@@ -134,5 +134,11 @@ namespace HISTORY
 
             logs.Clear();
         }
+
+        public void Rebuild()
+        {
+            foreach (var state in manager.history)
+                CreateLog(state);
+        }
     }
 }

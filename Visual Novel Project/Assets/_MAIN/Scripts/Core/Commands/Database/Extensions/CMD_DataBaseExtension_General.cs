@@ -23,7 +23,7 @@ namespace COMMANDS
             database.AddCommand("showdb", new Func<string[], IEnumerator>(ShowDialogueBox));
             database.AddCommand("hidedb", new Func<string[], IEnumerator>(HideDialogueBox));
 
-            database.AddCommand("load", new Action<string[]>(LoadNewDialogueFile));
+            database.AddCommand("load", new Action<string[]>(LoadNewDialogueFile));        
         }
 
         private static void LoadNewDialogueFile(string[] data)

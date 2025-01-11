@@ -1,3 +1,4 @@
+
 narrator "and so begin the adventures"
 
 ??? "what time is it?"
@@ -34,36 +35,65 @@ narrator "hmmm. alright."
 
 stopsong()
 
+narrator "another question."
+
+enter Baron as Baron at 0.5 [0:A2,1:A_Blush] "yo."
+Baron.unhighlight()
+
+narrator "say, do you think she's cute?"
+
+choice "Is she?"
+{
+	-Yes
+		"quite an open-minded person you are."
+	-No
+		"a man with standards i see."
+}
+
 narrator "so tell me. what is your name?"
+
+Baron.Hide()
 
 input "What is your name?."
 
-narrator "nice to meet you, <input>."
+SetPlayerName(<input>)
 
+if (<mainChar> == "rainer")
+{
+	narrator "<mainChar> huh?"
+	narrator "familiar name."
+	narrator "anyways..."
+}
+else
+{
+	narrator "nice to meet you, <mainChar>."
+}
 narrator "how are you feeling?"
 
 choice "How are you feeling?"
 {
 	-Sad
-		<input> "i feel kind of sad"
+		<mainChar> "i feel kind of sad"
 		narrator "life is short so do not waste on it being sad.""
 	-Happy
-		<input> "i'm so elated! i could kiss someone!"
+		<mainChar> "i'm so elated! i could kiss someone!"
 		narrator "it is of course great to feel happy."
 		"not because everything is good, but because you see the good side of everything."
 		choice "Response:"
 		{
 			-Alright
+				narrator "it's good that you understood."
 			-...
+				narrator "quite a quiet one are you?"
 		}
+		narrator "well, anyways..."
 	-Normal
-		<input> "i don't know, really. i'm okay i guess?"
+		<mainChar> "i don't know, really. i'm okay i guess?"
 		narrator "indifference is the strongest force in the universe."
 		"it makes everything it touches meaningless."
 		"love and hate do not stand a chance against it."
 }
-
-narrator "anyways, it was nice knowing you, <input>."
+narrator "...it was nice knowing you, $VN.mainCharName."
 
 narrator "so now, where do you want to go?"
 

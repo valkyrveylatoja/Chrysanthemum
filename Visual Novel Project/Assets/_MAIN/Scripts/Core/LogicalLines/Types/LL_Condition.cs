@@ -31,14 +31,19 @@ namespace DIALOGUE.LogicalLines
                 if (nextLine == ELSE)
                 {
                     elseData = RipEncapsulationData(currentConversation, ifData.endingIndex + 1, false, parentStartingIndex: currentConversation.fileStartIndex);
-                    ifData.endingIndex = elseData.endingIndex;
                 }
             }
 
-            currentConversation.SetProgress(ifData.endingIndex);
+            currentConversation.SetProgress(elseData.isNull ? ifData.endingIndex : elseData.endingIndex);
+
             EncapsulatedData selData = conditionResult ? ifData : elseData;
+
             if (!selData.isNull && selData.lines.Count > 0)
             {
+                // Remove the header and encapsulator lines from the conversation indexes
+                selData.startingIndex += 2; // Remove header and starting encapsulator
+                selData.endingIndex -= 1; // Remove ending encapsulator
+
                 Conversation newConversation = new Conversation(selData.lines, file: currentConversation.file, fileStartIndex: selData.startingIndex, fileEndIndex: selData.endingIndex);
                 DialogueSystem.instance.conversationManager.EnqueuePriority(newConversation);
             }   

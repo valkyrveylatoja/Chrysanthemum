@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
 using System.IO;
+using VISUALNOVEL;
 
 public class TestDialogueFiles : MonoBehaviour
 {

@@ -1,6 +1,6 @@
 
 showdb(-spd 1)
-setlayermedia(background -m Nebula)
+setlayermedia(background -m Nebula -aud true)
 <input> "ugh what dream was that?"
 
 "wh- where am i?!?!?!"
