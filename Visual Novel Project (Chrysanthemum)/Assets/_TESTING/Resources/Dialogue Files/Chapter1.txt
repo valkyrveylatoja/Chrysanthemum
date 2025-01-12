@@ -1,0 +1,198 @@
+Announcer as narrator "{wc 1} Chapter 1: Scent."
+
+narrator " {wc 1} What can I see...?"
+
+setlayermedia(background BLUERED_BG -spd 0.5 -blend "Hypno")
+
+narrator "I see color - both red and blue, {wa 0.5} with frowning hues detoriating its purity."
+
+narrator "What can I touch?"
+
+narrator "There is no ground to support me, and no hand to reach."
+
+narrator "What can I feel?"
+
+narrator "The nullifying space reflects this chasm within my soul."
+
+narrator "What is that smell?"
+
+narrator "I sense a sweet and floral scent. {wa 0.5} Where the scent pierces through my body, trying to rebuild me into something anew."
+
+narrator "Where did that smell come from?"
+
+narrator "I blindly follow the scent - swimming with the emptiness, like there is no tomorrow."
+
+narrator "Ah~ I can't live without that smell! I must go where it guides me!"
+
+narrator "As I continue following the scent, it grew stronger."
+
+narrator "Stronger as it got, it made a grip too strong that I cannot escape it."
+
+narrator "Is this bliss? Is having something to chase on this astonishing?"
+
+narrator "Such a simple goal has never kept me this thrilling."
+
+narrator "Ambition has never felt more ugly."
+
+narrator "The scent continues to pull me,."
+
+narrator "This scent is a singularity."
+
+narrator "This scent is the truth."
+
+narrator "I must-"
+
+CreateCharacter(Azalea)
+
+Azalea as ??? "Yo."
+
+clearlayermedia(background)
+narrator "..!"
+
+Azalea as ??? "You alright?"
+
+narrator "Ugh..... h-huh?"
+
+setlayermedia(background AZALEA1 -spd 0.2)
+Azalea "Hey man, you alright?"
+
+narrator "Woah... huh?"
+
+Azalea as ??? "You seem out of it. What happened back there?"
+
+narrator "Wh-what happened back there?"
+
+Azalea as ??? "Beats me? I saw you suddenly launched from above me."
+
+narrator "I... I did?"
+
+Azalea as ??? "Yeah bro, it looked like you were chasing something..."
+
+Azalea as ??? "Then the rising landmass ramped you above me and you landed on your face. {wa 0.5} Ouch!"
+
+narrator "Did that really happen?"
+
+Azalea as ??? "Hm? You already got amnesia? That landing must've really hit hard!"
+
+narrator "Huh? Oh no... its just."
+
+narrator "I'm fine."
+
+Azalea as ??? "Are you sure?"
+
+narrator "Yeah... sorry about that."
+
+Azalea as ??? "No worries."
+
+Azalea "Name's Azalea by the way."
+
+Azalea "What about you, mysterious person who just landed his face in front of me?"
+
+narrator "Oh! Uh..."
+
+input "What is your name?""
+
+SetPlayerName(<input>)
+
+if (<mainChar> == "Azalea")
+{
+	<mainChar> "Oh uh, my name is <mainChar>."
+	Azalea "Huh? Don't just steal my name from me!"
+	<mainChar> "But that really is my name?"
+	Azalea "Should I believe you? Ugh fine."
+}
+else
+{
+	<mainChar> "Oh uh, my name is <mainChar>."
+	Azalea "<mainChar> Huh?"
+}
+
+Azalea "Well, it's nice to meet you, <mainChar>."
+
+<mainChar> "Yeah... same here."
+
+Azalea "..."
+
+<mainChar> "..."
+
+Azalea "Besides your dramatic entrance to come and see me. What are you here for?"
+
+<mainChar> "You sounded like it was intentional."
+
+Azalea "It wasn't?"
+
+<mainChar> "I... I don't know..."
+
+Azalea "... {c} What really happened back there?"
+
+clearlayermedia(background)
+narrator "As I try to recall moments before this interaction had happened. I felt a sudden strain within my brain."
+
+setlayermedia(background BLUERED_BG -blend "Hypno")
+<mainChar> "URGH..! Urgh...! GR-GRAHH!"
+
+Azalea "What?! What's up with you?"
+
+narrator "I then impulsively grabbed both of her shoulders, while my head is facing to the ground."
+
+narrator "Squinting my eyes, grinding my teeth - I've felt like my face would break into pieces."
+
+Azalea "Hey! Don't touch me!"
+
+Azalea "I really did think you were weird, but I never knew there were levels to this!"
+
+clearlayermedia(background)
+narrator "What is this feeling? Why does it feel like I am being trapped by something?"
+
+narrator "Even gathering such thoughts, it did not stop this sudden and mysterious suffocation within my body."
+
+narrator "I feel like I am going to-"
+
+narrator "*Slap*"
+
+<mainChar> "H-huh..?"
+
+setlayermedia(background AZALEA1 -spd 0.3)
+Azalea "Man you're one weird guy..."
+
+Azalea "..."
+
+<mainChar> "..."
+
+choice "Respond:"
+{
+	-I'm Sorry
+		<mainChar> "I'm sorry back there. I don't know what came over me..."
+		Azalea "... {wa 0.5} It's fine. Just glad you're alright, I guess."
+		<mainChar> "Really, thank you."
+		Azalea "Don't sweat it."
+	-...
+		<mainChar> "..."
+		Azalea "..."
+		narrator "We've kept this silence for a couple of minutes"
+}
+
+Azalea "..."
+
+<mainChar> "..."
+
+clearlayermedia(background)
+wait(1)
+
+narrator "After every small talk and more small talk, we went our seprate ways."
+
+narrator "I don't know why, but I can't seem to remember of what happened."
+
+narrator "I know my name, my family, my friends, where I live, the show that aired this morning."
+
+narrator "I think I am completely fine..."
+
+narrator "As I try to gather my thoughts. I head off to my house."
+
+<mainChar> "I wonder if I could meet her again..."
+
+hidedb(-spd 0.5)
+
+wait(1)
+
+Load(Chapter2)

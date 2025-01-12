@@ -1,0 +1,55 @@
+Announcer as narrator "{wc 1} Chapter 2: Room."
+
+narrator "{wc 1} It is <time>."
+
+narrator "I don't know what to do."
+
+setlayermedia(background ROOM -spd 0.3 -b Diagonal)
+playsfx("Static" -v 0.5 -p 0.5 -l true)
+
+<mainChar> "Sigh..."
+
+narrator "As I stroke my cat's head while staring blankly at my ceiling. I can feel every second."
+
+<mainChar> "The cold makes me feel anxious."
+
+narrator "As I said it out loud I didn't really know the reason as to why I uttered such a thing."
+
+<mainChar> "Hey don't you think I'm weird?"
+
+CreateCharacter(Cat)
+
+Cat "Meow."
+
+<mainChar> "Heh."
+
+narrator "It can't go on like this. I should kick-start my day!"
+
+stopsfx("Static")
+clearlayermedia(background)
+setlayermedia(background OUTSIDE)
+
+narrator "As I went for a walk. It felt like I can appreciate life as it is."
+
+narrator "It has never felt this tranquil before."
+
+narrator "But a lot is going on at the same time."
+
+narrator "This juxtaposition that we call life is truly fascinating."
+
+<mainChar> "..?"
+
+narrator "As I heard a sound, I try to look back but a sudden fist knocked me over."
+
+<mainChar> "Gah!"
+
+narrator "I fell to the ground. Trying to get up, I got stomped down from my head."
+
+narrator "The mysterious person continued to mercilessly beat me."
+
+clearlayermedia(background -spd 0.2)
+<mainChar> "G...gah...!"
+
+<mainChar> "..."
+
+Announcer as narrator "{wc 1} To be continued."
