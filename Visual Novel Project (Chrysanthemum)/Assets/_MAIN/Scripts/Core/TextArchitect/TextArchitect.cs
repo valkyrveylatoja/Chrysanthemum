@@ -2,7 +2,6 @@ using System.Collections;
 using UnityEngine;
 using TMPro;
 using System.Security.Cryptography;
-using UnityEditor.Experimental.GraphView;
 
 // No MonoBehavior to instantiate it as a variable
 public class TextArchitect
