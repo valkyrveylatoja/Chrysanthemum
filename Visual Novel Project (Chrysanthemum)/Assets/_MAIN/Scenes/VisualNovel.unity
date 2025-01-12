@@ -2981,13 +2981,25 @@ MonoBehaviour:
   m_FillRect: {fileID: 405728892}
   m_HandleRect: {fileID: 720496265}
   m_Direction: 0
-  m_MinValue: 0
-  m_MaxValue: 1
+  m_MinValue: 0.1
+  m_MaxValue: 4
   m_WholeNumbers: 0
-  m_Value: 0
+  m_Value: 0.1
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2109935956}
+        m_TargetAssemblyTypeName: ConfigMenu, Assembly-CSharp
+        m_MethodName: SetTextArchitectSpeed
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &259834719
 GameObject:
   m_ObjectHideFlags: 0
@@ -7093,7 +7105,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 676099075}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2109935956}
+        m_TargetAssemblyTypeName: ConfigMenu, Assembly-CSharp
+        m_MethodName: OpenPanel
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: General
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &676099075
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7566,7 +7590,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Auto Speed Title
+  m_text: Auto Speed
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 33ff9e2864883d2418568a6d1d41ff2d, type: 2}
   m_sharedMaterial: {fileID: 4111167852118504922, guid: 33ff9e2864883d2418568a6d1d41ff2d, type: 2}
@@ -10569,13 +10593,25 @@ MonoBehaviour:
   m_FillRect: {fileID: 1419098231}
   m_HandleRect: {fileID: 1747733368}
   m_Direction: 0
-  m_MinValue: 0
-  m_MaxValue: 1
+  m_MinValue: 0.1
+  m_MaxValue: 4
   m_WholeNumbers: 0
-  m_Value: 0
+  m_Value: 0.1
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2109935956}
+        m_TargetAssemblyTypeName: ConfigMenu, Assembly-CSharp
+        m_MethodName: SetAutoReaderSpeed
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &914117617
 GameObject:
   m_ObjectHideFlags: 0
@@ -10958,7 +10994,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 950872797}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2109935956}
+        m_TargetAssemblyTypeName: ConfigMenu, Assembly-CSharp
+        m_MethodName: OpenPanel
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Audio
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &950872797
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11758,7 +11806,7 @@ CanvasGroup:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 974453801}
   m_Enabled: 1
-  m_Alpha: 0
+  m_Alpha: 1
   m_Interactable: 0
   m_BlocksRaycasts: 0
   m_IgnoreParentGroups: 0
@@ -13839,8 +13887,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 494169315}
   m_HandleRect: {fileID: 494169314}
   m_Direction: 2
-  m_Value: 1.0000005
-  m_Size: 0.7714574
+  m_Value: 1
+  m_Size: 0.7714573
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -17799,7 +17847,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 192, y: -255.90004}
+  m_AnchoredPosition: {x: 192, y: -255.90002}
   m_SizeDelta: {x: -384, y: -511.79}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1514010066
@@ -21696,7 +21744,7 @@ CanvasGroup:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1905042207}
   m_Enabled: 1
-  m_Alpha: 1
+  m_Alpha: 0
   m_Interactable: 0
   m_BlocksRaycasts: 0
   m_IgnoreParentGroups: 0
@@ -23492,6 +23540,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pageType: 1
   anim: {fileID: 974453804}
+  panels:
+  - {fileID: 1084767758}
+  - {fileID: 1522808213}
+  ui:
+    architectSpeed: {fileID: 213124406}
+    autoReaderSpeed: {fileID: 910174528}
+    musicVolume: {fileID: 1680910563}
+    sfxVolume: {fileID: 1890531158}
 --- !u!1 &2123058167
 GameObject:
   m_ObjectHideFlags: 0

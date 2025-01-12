@@ -4,7 +4,7 @@ public class FilePaths
 {
     private const string HOME_DIRECTORY_SYMBOL = "~/";
 
-    public static readonly string root = $"{Application.dataPath}/gameData/";
+    public static readonly string root = $"{runtimePath}/gameData/";
 
     //Runtime Paths
     public static readonly string gameSaves = $"{runtimePath}Save Files/";
