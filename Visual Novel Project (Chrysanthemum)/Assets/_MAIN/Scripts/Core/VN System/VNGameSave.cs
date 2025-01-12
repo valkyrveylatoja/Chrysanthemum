@@ -27,6 +27,7 @@ namespace VISUALNOVEL
         public string playerName;
         public int slotNumber = 1;
 
+        public bool newGame = true;
         public string[] activeConversations;
         public HistoryState activeState;
         public HistoryState[] historyLogs;
@@ -48,6 +49,8 @@ namespace VISUALNOVEL
 
         public void Save()
         {
+            newGame = false;
+
             activeState = HistoryState.Capture();
             historyLogs = HistoryManager.instance.history.ToArray();
             activeConversations =  GetConversationData();
