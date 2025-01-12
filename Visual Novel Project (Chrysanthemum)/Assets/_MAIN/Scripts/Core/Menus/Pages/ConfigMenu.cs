@@ -5,6 +5,8 @@ using UnityEngine;
 using UnityEngine.UI;
 using System.IO;
 using DIALOGUE;
+using UnityEngine.Audio;
+using UnityEngine.Rendering;
 
 public class ConfigMenu : MenuPage
 {
@@ -14,6 +16,8 @@ public class ConfigMenu : MenuPage
     private GameObject activePanel;
 
     public UI_ITEMS ui;
+
+    
 
     private VN_Configuration config => VN_Configuration.activeConfig;
 
@@ -71,13 +75,20 @@ public class ConfigMenu : MenuPage
     [System.Serializable]
     public class UI_ITEMS
     {
+        public static Color musicOnColor = new Color(1, 0.65f, 0, 1);
+        public static Color musicOffColor = new Color(0.5f, 0.5f, 0.5f, 1);
+
         [Header("General")]
         public Slider architectSpeed;
         public Slider autoReaderSpeed;
 
         [Header("Audio")]
+        public Image musicFill;
+        public Image sfxFill;
         public Slider musicVolume;
         public Slider sfxVolume;
+        public Button musicMute;
+        public Button sfxMute;
     }
 
     // UI CALLABLE FUNCTIONS
@@ -96,4 +107,38 @@ public class ConfigMenu : MenuPage
         if (autoReader != null )
             autoReader.speed = config.dialogueAutoReadSpeed;
     }
+
+
+    public void SetMusicValue()
+    {
+        config.musicVolume = ui.musicVolume.value;
+        AudioManager.instance.SetMusicVolume(config.musicVolume, config.musicMute);
+
+        ui.musicFill.color = config.musicMute ? UI_ITEMS.musicOffColor : UI_ITEMS.musicOnColor;
+    }
+
+    public void SetSFXValue()
+    {
+        config.sfxVolume = ui.sfxVolume.value;
+        AudioManager.instance.SetSFXVolume(config.sfxVolume, config.sfxMute);
+
+        ui.sfxFill.color = config.sfxMute ? UI_ITEMS.musicOffColor : UI_ITEMS.musicOnColor;
+    }
+
+    public void SetMusicMute()
+    {
+        config.musicMute = !config.musicMute;
+        ui.musicVolume.fillRect.GetComponent<Image>().color = config.musicMute ? UI_ITEMS.musicOffColor : UI_ITEMS.musicOnColor;
+
+        AudioManager.instance.SetMusicVolume(config.musicVolume, config.musicMute);
+    }
+
+    public void SetSFXMute()
+    {
+        config.sfxMute = !config.sfxMute;
+        ui.sfxVolume.fillRect.GetComponent<Image>().color = config.sfxMute ? UI_ITEMS.musicOffColor : UI_ITEMS.musicOnColor;
+
+        AudioManager.instance.SetSFXVolume(config.sfxVolume, config.sfxMute);
+    }
+
 }
